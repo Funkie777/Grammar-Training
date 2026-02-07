@@ -1,0 +1,2027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30-Day Grammar Mastery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: #27ae60;
+            transition: width 0.3s ease;
+        }
+        
+        .stats {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .day-header {
+            background: #34495e;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        .day-header h2 {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .lesson {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .lesson h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: #2c3e50;
+        }
+        
+        .lesson p {
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        
+        .example {
+            background: white;
+            padding: 12px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+        
+        .correct { color: #27ae60; }
+        .incorrect { color: #e74c3c; }
+        
+        .quiz {
+            margin-top: 20px;
+        }
+        
+        .question {
+            background: white;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+        }
+        
+        .question-text {
+            font-size: 15px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .option {
+            padding: 12px 16px;
+            background: #f8f9fa;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+        
+        .option:hover {
+            background: #e9ecef;
+            border-color: #3498db;
+        }
+        
+        .option.selected {
+            border-color: #3498db;
+            background: #e3f2fd;
+        }
+        
+        .option.correct-answer {
+            border-color: #27ae60;
+            background: #d4edda;
+        }
+        
+        .option.wrong-answer {
+            border-color: #e74c3c;
+            background: #f8d7da;
+        }
+        
+        .feedback {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        .feedback.correct {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .feedback.incorrect {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        
+        button:hover {
+            background: #2980b9;
+        }
+        
+        button:disabled {
+            background: #95a5a6;
+            cursor: not-allowed;
+        }
+        
+        .navigation {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .complete-btn {
+            background: #27ae60;
+        }
+        
+        .complete-btn:hover {
+            background: #229954;
+        }
+        
+        .day-complete {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 20px;
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        .day-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .day-btn {
+            padding: 10px;
+            background: #ecf0f1;
+            border: 2px solid #bdc3c7;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .day-btn:hover {
+            background: #d5dbdb;
+        }
+        
+        .day-btn.completed {
+            background: #d4edda;
+            border-color: #27ae60;
+            color: #155724;
+        }
+        
+        .day-btn.current {
+            background: #3498db;
+            border-color: #2980b9;
+            color: white;
+        }
+        
+        .reset-btn {
+            background: #e74c3c;
+            margin-top: 20px;
+        }
+        
+        .reset-btn:hover {
+            background: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>30-Day Grammar Mastery</h1>
+        <div class="stats">
+            <div>Day <span id="current-day">1</span> of 30</div>
+            <div>Completed: <span id="completed-count">0</span>/30</div>
+            <div>Score: <span id="total-score">0</span>%</div>
+        </div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        
+        <div class="day-selector" id="day-selector"></div>
+        
+        <div id="lesson-container"></div>
+        
+        <button class="reset-btn" onclick="resetProgress()">Reset All Progress</button>
+    </div>
+
+    <script>
+        const lessons = [
+            {
+                day: 1,
+                title: "Subject vs Object Pronouns",
+                topic: "I vs Me, They vs Them",
+                content: `The rule is simple: use subject pronouns (I, he, she, they, we) when the pronoun does the action. Use object pronouns (me, him, her, them, us) when the pronoun receives the action.
+
+The trick: Remove the other person from the sentence and see what sounds right.`,
+                examples: [
+                    { text: "John and I went to the meeting.", note: "(I went, not me went)", correct: true },
+                    { text: "The report was sent to Sarah and me.", note: "(sent to me, not sent to I)", correct: true },
+                    { text: "Between you and me, this needs work.", note: "(always 'between...and me')", correct: true }
+                ],
+                questions: [
+                    {
+                        q: "The CEO asked John and ___ to present the findings.",
+                        options: ["I", "me", "myself"],
+                        correct: 1,
+                        explanation: "'Me' is correct because it's the object (receiving the action of being asked). Test: 'The CEO asked me' works, 'The CEO asked I' doesn't."
+                    },
+                    {
+                        q: "___ and the marketing team will handle the launch.",
+                        options: ["Me", "Myself", "I"],
+                        correct: 2,
+                        explanation: "'I' is the subject doing the action (will handle). Test: 'I will handle' works."
+                    },
+                    {
+                        q: "This stays between you and ___.",
+                        options: ["I", "me", "myself"],
+                        correct: 1,
+                        explanation: "After 'between' always use object pronouns. 'Between you and me' is always correct."
+                    },
+                    {
+                        q: "The investors spoke to my co-founder and ___.",
+                        options: ["I", "me", "myself"],
+                        correct: 1,
+                        explanation: "'Me' receives the action (spoke to). Test: 'spoke to me' is correct."
+                    }
+                ]
+            },
+            {
+                day: 2,
+                title: "That vs Which",
+                topic: "Restrictive vs Non-restrictive Clauses",
+                content: `Use 'that' for essential information (no commas). Use 'which' for extra information (with commas).
+
+If you can remove the clause and the sentence still makes sense, use 'which' with commas. If removing it changes the meaning, use 'that' with no commas.`,
+                examples: [
+                    { text: "The report that was submitted late needs revision.", note: "(specifies which report)", correct: true },
+                    { text: "The report, which was 50 pages, needs revision.", note: "(extra detail about the report)", correct: true },
+                    { text: "Products that fail testing are rejected.", note: "(only the ones that fail)", correct: true }
+                ],
+                questions: [
+                    {
+                        q: "The proposal ___ we discussed yesterday has been approved.",
+                        options: ["that", "which"],
+                        correct: 0,
+                        explanation: "'That' is correct because it specifies which proposal. The clause is essential to identify it."
+                    },
+                    {
+                        q: "Our Q4 strategy, ___ focuses on retention, launches next month.",
+                        options: ["that", "which"],
+                        correct: 1,
+                        explanation: "'Which' is correct. The clause gives extra information but isn't essential to identify the strategy."
+                    },
+                    {
+                        q: "Companies ___ invest in training see better retention.",
+                        options: ["that", "which"],
+                        correct: 0,
+                        explanation: "'That' specifies which companies (only those that invest). Essential information, no commas."
+                    },
+                    {
+                        q: "The new policy, ___ takes effect Monday, affects all staff.",
+                        options: ["that", "which"],
+                        correct: 1,
+                        explanation: "'Which' provides additional detail. The policy is already identified, the clause adds context."
+                    }
+                ]
+            },
+            {
+                day: 3,
+                title: "Comma Splices",
+                topic: "Fixing Run-on Sentences",
+                content: `A comma splice joins two complete sentences with just a comma. This is wrong.
+
+Fix it with: a period, a semicolon, a conjunction (and, but, so), or a dependent clause.`,
+                examples: [
+                    { text: "Revenue increased, costs decreased.", note: "(comma splice)", correct: false },
+                    { text: "Revenue increased, and costs decreased.", note: "(fixed with conjunction)", correct: true },
+                    { text: "Revenue increased; costs decreased.", note: "(fixed with semicolon)", correct: true },
+                    { text: "Revenue increased. Costs decreased.", note: "(fixed with period)", correct: true }
+                ],
+                questions: [
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "The meeting ran late, we missed the deadline.",
+                            "The meeting ran late, so we missed the deadline.",
+                            "The meeting ran late we missed the deadline."
+                        ],
+                        correct: 1,
+                        explanation: "Option 1 is a comma splice. Option 3 is a run-on. Option 2 correctly uses a conjunction."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "Sales dropped 15%, the team pivoted strategy.",
+                            "Sales dropped 15%; the team pivoted strategy.",
+                            "Sales dropped 15% the team pivoted strategy."
+                        ],
+                        correct: 1,
+                        explanation: "Two complete thoughts need stronger separation than a comma. Semicolon works here."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "She sent the proposal, it was rejected.",
+                            "She sent the proposal, but it was rejected.",
+                            "She sent the proposal it was rejected."
+                        ],
+                        correct: 1,
+                        explanation: "The conjunction 'but' properly connects the two independent clauses."
+                    }
+                ]
+            },
+            {
+                day: 4,
+                title: "Its vs It's",
+                topic: "Possessive vs Contraction",
+                content: `It's = it is or it has (contraction)
+Its = belonging to it (possessive, like his or her)
+
+In professional writing, avoid contractions. Use 'it is' instead of 'it's'.`,
+                examples: [
+                    { text: "The company announced its quarterly results.", note: "(possessive)", correct: true },
+                    { text: "It's important to meet deadlines.", note: "(it is)", correct: true },
+                    { text: "The project lost its funding.", note: "(possessive)", correct: true },
+                    { text: "It's been three weeks since launch.", note: "(it has)", correct: true }
+                ],
+                questions: [
+                    {
+                        q: "The department exceeded ___ targets.",
+                        options: ["its", "it's"],
+                        correct: 0,
+                        explanation: "'Its' shows possession (belonging to the department)."
+                    },
+                    {
+                        q: "___ critical that we respond today.",
+                        options: ["Its", "It's"],
+                        correct: 1,
+                        explanation: "'It's' = 'It is'. However, in formal writing, write 'It is critical' instead."
+                    },
+                    {
+                        q: "The software update lost ___ core features.",
+                        options: ["its", "it's"],
+                        correct: 0,
+                        explanation: "'Its' is possessive (features belonging to it)."
+                    },
+                    {
+                        q: "In formal business writing, which is better?",
+                        options: [
+                            "It's essential to review the contract.",
+                            "It is essential to review the contract."
+                        ],
+                        correct: 1,
+                        explanation: "Avoid contractions in professional writing. 'It is' is more formal than 'it's'."
+                    }
+                ]
+            },
+            {
+                day: 5,
+                title: "Their, There, They're",
+                topic: "Common Homophones",
+                content: `Their = possessive (belonging to them)
+There = location or placeholder
+They're = they are (contraction, avoid in formal writing)
+
+Again, avoid contractions in business writing.`,
+                examples: [
+                    { text: "The team submitted their proposal.", note: "(possessive)", correct: true },
+                    { text: "There are three options to consider.", note: "(placeholder)", correct: true },
+                    { text: "They're launching next quarter.", note: "(they are)", correct: true },
+                    { text: "Put the files there.", note: "(location)", correct: true }
+                ],
+                questions: [
+                    {
+                        q: "The investors shared ___ concerns.",
+                        options: ["their", "there", "they're"],
+                        correct: 0,
+                        explanation: "'Their' shows possession (concerns belonging to them)."
+                    },
+                    {
+                        q: "___ are several issues to address.",
+                        options: ["Their", "There", "They're"],
+                        correct: 1,
+                        explanation: "'There' is a placeholder in 'there are' constructions."
+                    },
+                    {
+                        q: "The clients confirmed ___ attending.",
+                        options: ["their", "there", "they're"],
+                        correct: 2,
+                        explanation: "'They're' = 'they are'. But write 'they are attending' in formal writing."
+                    },
+                    {
+                        q: "Which is most professional?",
+                        options: [
+                            "They're reviewing the contract.",
+                            "They are reviewing the contract."
+                        ],
+                        correct: 1,
+                        explanation: "Avoid contractions in business writing. 'They are' is more formal."
+                    }
+                ]
+            },
+            {
+                day: 6,
+                title: "Who vs Whom",
+                topic: "Subject vs Object in Questions",
+                content: `Who = subject (does the action)
+Whom = object (receives the action)
+
+Quick test: If you'd answer with he/she, use 'who'. If you'd answer with him/her, use 'whom'.
+
+Note: 'Whom' is declining in everyday use, but it's still correct in formal writing.`,
+                examples: [
+                    { text: "Who sent this email? (He sent it)", note: "(subject)", correct: true },
+                    { text: "To whom should I send this? (Send it to him)", note: "(object)", correct: true },
+                    { text: "Who is leading the project?", note: "(subject)", correct: true },
+                    { text: "Whom did you meet? (I met her)", note: "(object)", correct: true }
+                ],
+                questions: [
+                    {
+                        q: "___ is responsible for this decision?",
+                        options: ["Who", "Whom"],
+                        correct: 0,
+                        explanation: "'Who' is the subject (someone is responsible). Test: 'She is responsible'."
+                    },
+                    {
+                        q: "To ___ should I address the letter?",
+                        options: ["who", "whom"],
+                        correct: 1,
+                        explanation: "'Whom' is the object of 'to'. Test: 'address it to him', not 'address it to he'."
+                    },
+                    {
+                        q: "___ did the board appoint?",
+                        options: ["Who", "Whom"],
+                        correct: 1,
+                        explanation: "'Whom' receives the action (being appointed). Test: 'they appointed him'."
+                    },
+                    {
+                        q: "___ will present at the conference?",
+                        options: ["Who", "Whom"],
+                        correct: 0,
+                        explanation: "'Who' is the subject (will present). Test: 'He will present'."
+                    }
+                ]
+            },
+            {
+                day: 7,
+                title: "Affect vs Effect",
+                topic: "Verb vs Noun Distinction",
+                content: `Affect = verb (to influence)
+Effect = noun (the result)
+
+Rare exceptions: 'effect' as a verb means 'to cause' (effect change). 'Affect' as a noun is psychology jargon.
+
+In 95% of cases: affect is the verb, effect is the noun.`,
+                examples: [
+                    { text: "The policy will affect all employees.", note: "(verb: influence)", correct: true },
+                    { text: "The policy had a positive effect.", note: "(noun: result)", correct: true },
+                    { text: "Budget cuts affect performance.", note: "(verb)", correct: true },
+                    { text: "We aim to effect change.", note: "(verb: cause, rare)", correct: true }
+                ],
+                questions: [
+                    {
+                        q: "The new regulations will ___ our timeline.",
+                        options: ["affect", "effect"],
+                        correct: 0,
+                        explanation: "'Affect' is the verb (will influence). Regulations affect things."
+                    },
+                    {
+                        q: "What is the ___ of the delay?",
+                        options: ["affect", "effect"],
+                        correct: 1,
+                        explanation: "'Effect' is the noun (the result). 'The effect' is what happened."
+                    },
+                    {
+                        q: "Market volatility can ___ investor confidence.",
+                        options: ["affect", "effect"],
+                        correct: 0,
+                        explanation: "'Affect' is the verb (can influence)."
+                    },
+                    {
+                        q: "The merger will have significant ___s.",
+                        options: ["affect", "effect"],
+                        correct: 1,
+                        explanation: "'Effects' is the noun (results). 'Will have effects' = will have results."
+                    }
+                ]
+            },
+            {
+                day: 8,
+                title: "Less vs Fewer",
+                topic: "Countable vs Uncountable",
+                content: `Fewer = countable items (things you can count)
+Less = uncountable mass (things you measure)
+
+Simple rule: If you can count it, use 'fewer'. If you measure it, use 'less'.`,
+                examples: [
+                    { text: "Fewer employees means less overhead.", note: "(count employees, measure overhead)", correct: true },
+                    { text: "We need fewer meetings and less bureaucracy.", note: "(count meetings, measure bureaucracy)", correct: true },
+                    { text: "Less than $500 (but: fewer than 500 dollars)", note: "(money is measured)", correct: true }
+                ],
+                questions: [
+                    {
+                        q: "We received ___ applications this quarter.",
+                        options: ["less", "fewer"],
+                        correct: 1,
+                        explanation: "'Fewer' because applications are countable. You can count them."
+                    },
+                    {
+                        q: "The project requires ___ time than expected.",
+                        options: ["less", "fewer"],
+                        correct: 0,
+                        explanation: "'Less' because time is uncountable (you measure it, not count it)."
+                    },
+                    {
+                        q: "We need ___ people on this task.",
+                        options: ["less", "fewer"],
+                        correct: 1,
+                        explanation: "'Fewer' because people are countable."
+                    },
+                    {
+                        q: "The new process uses ___ resources.",
+                        options: ["less", "fewer"],
+                        correct: 1,
+                        explanation: "'Fewer' because resources are countable items. You can list them."
+                    }
+                ]
+            },
+            {
+                day: 9,
+                title: "Lay vs Lie",
+                topic: "Transitive vs Intransitive Verbs",
+                content: `Lay = to place something (needs an object)
+Lie = to recline (no object)
+
+Present: I lay the report down. I lie down.
+Past: I laid the report down. I lay down.
+Past participle: I have laid it down. I have lain down.
+
+This is confusing because 'lay' is both present tense of 'lay' and past tense of 'lie'.`,
+                examples: [
+                    { text: "Please lay the documents on the desk.", note: "(place them)", correct: true },
+                    { text: "I need to lie down.", note: "(recline myself)", correct: true },
+                    { text: "Yesterday I laid out the plan.", note: "(past of lay)", correct: true },
+                    { text: "Yesterday I lay on the couch.", note: "(past of lie)", correct: true }
+                ],
+                questions: [
+                    {
+                        q: "Please ___ the contract on the table.",
+                        options: ["lay", "lie"],
+                        correct: 0,
+                        explanation: "'Lay' because you're placing something (the contract is the object)."
+                    },
+                    {
+                        q: "The opportunity ___s ahead of us.",
+                        options: ["lay", "lie"],
+                        correct: 1,
+                        explanation: "'Lies' because nothing is being placed. The opportunity just exists ahead."
+                    },
+                    {
+                        q: "Yesterday, I ___ the groundwork for the pitch.",
+                        options: ["laid", "lay"],
+                        correct: 0,
+                        explanation: "'Laid' is the past tense of 'lay' (to place something)."
+                    },
+                    {
+                        q: "The keys have ___ on the desk all morning.",
+                        options: ["laid", "lain"],
+                        correct: 1,
+                        explanation: "'Lain' is the past participle of 'lie'. The keys are reclining, not being placed."
+                    }
+                ]
+            },
+            {
+                day: 10,
+                title: "Subjunctive Mood",
+                topic: "Expressing Hypotheticals and Demands",
+                content: `Use subjunctive mood for wishes, suggestions, demands, and contrary-to-fact statements.
+
+Key pattern: After 'if', 'wish', 'suggest', 'require', 'demand', use the base verb form (without 's').
+
+Most common: 'If I were' (not 'if I was') for hypotheticals.`,
+                examples: [
+                    { text: "If I were CEO, I'd restructure.", note: "(contrary to fact)", correct: true },
+                    { text: "I suggest that he attend the meeting.", note: "(not 'attends')", correct: true },
+                    { text: "It's critical that she review this.", note: "(not 'reviews')", correct: true },
+                    { text: "I wish I were able to help.", note: "(not 'was')", correct: true }
+                ],
+                questions: [
+                    {
+                        q: "If I ___ in charge, I'd change the policy.",
+                        options: ["was", "were"],
+                        correct: 1,
+                        explanation: "'Were' is subjunctive, used for hypothetical situations. 'If I were' is always correct."
+                    },
+                    {
+                        q: "I recommend that she ___ the proposal today.",
+                        options: ["submits", "submit"],
+                        correct: 1,
+                        explanation: "After 'recommend/suggest/require', use base form 'submit' (no 's')."
+                    },
+                    {
+                        q: "It's essential that the team ___ on time.",
+                        options: ["arrives", "arrive"],
+                        correct: 1,
+                        explanation: "After 'essential/critical/important that', use base form 'arrive'."
+                    },
+                    {
+                        q: "The board insists that he ___ present.",
+                        options: ["is", "be"],
+                        correct: 1,
+                        explanation: "After 'insist/demand/require that', use base form 'be'."
+                    }
+                ]
+            },
+            {
+                day: 11,
+                title: "Active vs Passive Voice",
+                topic: "Clarity in Business Writing",
+                content: `Active voice: Subject does the action (clearer, stronger)
+Passive voice: Subject receives the action (vague, weaker)
+
+Use active voice in business writing. It's clearer and more direct.
+
+Passive is acceptable when the actor is unknown or irrelevant.`,
+                examples: [
+                    { text: "The team completed the audit.", note: "(active, clear)", correct: true },
+                    { text: "The audit was completed.", note: "(passive, vague)", correct: false },
+                    { text: "We increased revenue by 15%.", note: "(active)", correct: true },
+                    { text: "Revenue was increased by 15%.", note: "(passive)", correct: false }
+                ],
+                questions: [
+                    {
+                        q: "Which is stronger?",
+                        options: [
+                            "The proposal was rejected by the board.",
+                            "The board rejected the proposal."
+                        ],
+                        correct: 1,
+                        explanation: "Active voice is clearer and more direct. 'The board rejected' shows who did what."
+                    },
+                    {
+                        q: "Which is more professional?",
+                        options: [
+                            "Mistakes were made in the report.",
+                            "We made mistakes in the report."
+                        ],
+                        correct: 1,
+                        explanation: "Active voice takes ownership. Passive voice obscures responsibility."
+                    },
+                    {
+                        q: "Which is clearer?",
+                        options: [
+                            "The deadline was missed.",
+                            "The team missed the deadline."
+                        ],
+                        correct: 1,
+                        explanation: "Active voice identifies who missed it. Passive avoids naming the actor."
+                    },
+                    {
+                        q: "When is passive voice acceptable?",
+                        options: [
+                            "Always avoid it.",
+                            "When the actor is unknown or irrelevant.",
+                            "To sound more formal."
+                        ],
+                        correct: 1,
+                        explanation: "Passive is fine when you don't know who did it, or it doesn't matter who did it."
+                    }
+                ]
+            },
+            {
+                day: 12,
+                title: "Concision: Cutting Filler",
+                topic: "Eliminating Wordiness",
+                content: `Remove these common filler phrases:
+- 'In order to' → 'to'
+- 'Due to the fact that' → 'because'
+- 'At this point in time' → 'now'
+- 'For the purpose of' → 'to'
+- 'In the event that' → 'if'
+
+Business writing should be direct. Every word should work.`,
+                examples: [
+                    { text: "We need to optimize performance.", note: "(not 'in order to optimize')", correct: true },
+                    { text: "The project failed because of budget cuts.", note: "(not 'due to the fact that')", correct: true },
+                    { text: "We must decide now.", note: "(not 'at this point in time')", correct: true }
+                ],
+                questions: [
+                    {
+                        q: "Which is more concise?",
+                        options: [
+                            "In order to improve results, we need data.",
+                            "To improve results, we need data."
+                        ],
+                        correct: 1,
+                        explanation: "'In order to' adds no meaning. Just use 'to'."
+                    },
+                    {
+                        q: "Which is more concise?",
+                        options: [
+                            "Due to the fact that sales dropped, we pivoted.",
+                            "Because sales dropped, we pivoted."
+                        ],
+                        correct: 1,
+                        explanation: "'Due to the fact that' is wordy. 'Because' says the same thing in one word."
+                    },
+                    {
+                        q: "Which is more concise?",
+                        options: [
+                            "At this point in time, we're reviewing options.",
+                            "Now, we're reviewing options."
+                        ],
+                        correct: 1,
+                        explanation: "'At this point in time' is unnecessarily long. 'Now' works."
+                    },
+                    {
+                        q: "Which is more concise?",
+                        options: [
+                            "For the purpose of testing, we built a prototype.",
+                            "To test, we built a prototype."
+                        ],
+                        correct: 1,
+                        explanation: "'For the purpose of' is wordy. Replace with 'to'."
+                    }
+                ]
+            },
+            {
+                day: 13,
+                title: "Parallel Structure",
+                topic: "Consistency in Lists and Series",
+                content: `Items in a list must have the same grammatical structure.
+
+If you start with verbs, use verbs. If you start with nouns, use nouns.
+
+This applies to bullet points, series in sentences, and comparisons.`,
+                examples: [
+                    { text: "We need to hire, train, and retain talent.", note: "(all verbs)", correct: true },
+                    { text: "Our goals: growth, efficiency, innovation.", note: "(all nouns)", correct: true },
+                    { text: "She likes coding, testing, and to deploy.", note: "(inconsistent)", correct: false },
+                    { text: "She likes coding, testing, and deploying.", note: "(all gerunds)", correct: true }
+                ],
+                questions: [
+                    {
+                        q: "Which is parallel?",
+                        options: [
+                            "The project requires planning, to execute, and review.",
+                            "The project requires planning, executing, and reviewing."
+                        ],
+                        correct: 1,
+                        explanation: "All three items should match. Use all gerunds (planning, executing, reviewing)."
+                    },
+                    {
+                        q: "Which is parallel?",
+                        options: [
+                            "We focus on quality, speed, and being innovative.",
+                            "We focus on quality, speed, and innovation."
+                        ],
+                        correct: 1,
+                        explanation: "All three should be nouns (quality, speed, innovation)."
+                    },
+                    {
+                        q: "Which is parallel?",
+                        options: [
+                            "The role involves managing budgets, team leadership, and report on results.",
+                            "The role involves managing budgets, leading teams, and reporting on results."
+                        ],
+                        correct: 1,
+                        explanation: "All three should be gerunds (managing, leading, reporting)."
+                    },
+                    {
+                        q: "Which is parallel?",
+                        options: [
+                            "She's talented, hardworking, and has dedication.",
+                            "She's talented, hardworking, and dedicated."
+                        ],
+                        correct: 1,
+                        explanation: "All three should be adjectives (talented, hardworking, dedicated)."
+                    }
+                ]
+            },
+            {
+                day: 14,
+                title: "Dangling Modifiers",
+                topic: "Matching Subjects to Modifiers",
+                content: `A modifier at the start of a sentence must describe the subject that immediately follows.
+
+Wrong: "After reviewing the data, the decision was made."
+(The decision didn't review the data)
+
+Right: "After reviewing the data, we made the decision."
+(We reviewed the data)`,
+                examples: [
+                    { text: "Walking into the office, I saw the report.", note: "(I was walking)", correct: true },
+                    { text: "Walking into the office, the report was visible.", note: "(report wasn't walking)", correct: false },
+                    { text: "To improve results, we tested new strategies.", note: "(we are improving)", correct: true }
+                ],
+                questions: [
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "After analyzing the data, the conclusion was clear.",
+                            "After analyzing the data, we found the conclusion clear."
+                        ],
+                        correct: 1,
+                        explanation: "The conclusion didn't analyze the data. We did. The subject after the modifier must be 'we'."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "To reduce costs, expenses were cut.",
+                            "To reduce costs, we cut expenses."
+                        ],
+                        correct: 1,
+                        explanation: "Expenses can't 'reduce costs'. We do. The subject must be 'we'."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "Running the numbers, the forecast looked grim.",
+                            "Running the numbers, I found the forecast grim."
+                        ],
+                        correct: 1,
+                        explanation: "The forecast didn't run the numbers. I did."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "Having reviewed the contract, concerns emerged.",
+                            "Having reviewed the contract, I identified concerns."
+                        ],
+                        correct: 1,
+                        explanation: "Concerns didn't review the contract. I did."
+                    }
+                ]
+            },
+            {
+                day: 15,
+                title: "Comma Rules: Introductory Phrases",
+                topic: "When to Use Commas",
+                content: `Use a comma after introductory phrases longer than 3-4 words.
+
+Introductory phrases include:
+- Time: "Last quarter,"
+- Condition: "If we succeed,"
+- Transition: "However,"
+- Dependent clause: "When the market shifts,"
+
+Short ones (1-2 words) usually don't need commas.`,
+                examples: [
+                    { text: "After the meeting, we reviewed the notes.", note: "(introductory phrase)", correct: true },
+                    { text: "However, the results exceeded expectations.", note: "(transitional word)", correct: true },
+                    { text: "Yesterday we launched the product.", note: "(short, no comma needed)", correct: true },
+                    { text: "If the budget allows, we'll expand the team.", note: "(conditional clause)", correct: true }
+                ],
+                questions: [
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "Despite the challenges the team delivered.",
+                            "Despite the challenges, the team delivered."
+                        ],
+                        correct: 1,
+                        explanation: "Introductory phrase needs a comma. 'Despite the challenges' sets up the main clause."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "In Q4 revenue increased significantly.",
+                            "In Q4, revenue increased significantly."
+                        ],
+                        correct: 1,
+                        explanation: "Introductory phrase (even short ones with prepositions) gets a comma for clarity."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "When markets are volatile investors panic.",
+                            "When markets are volatile, investors panic."
+                        ],
+                        correct: 1,
+                        explanation: "Dependent clause at the start needs a comma before the main clause."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "Therefore we adjusted our strategy.",
+                            "Therefore, we adjusted our strategy."
+                        ],
+                        correct: 1,
+                        explanation: "Transitional words (therefore, however, moreover) need commas."
+                    }
+                ]
+            },
+            {
+                day: 16,
+                title: "Comma Rules: Independent Clauses",
+                topic: "Joining Complete Sentences",
+                content: `When joining two complete sentences with a conjunction (and, but, or, so), use a comma before the conjunction.
+
+Without a conjunction, use a semicolon or period, not a comma (that's a comma splice).
+
+Test: Can both parts stand alone? If yes, you need proper punctuation.`,
+                examples: [
+                    { text: "Revenue increased, and costs decreased.", note: "(two complete thoughts)", correct: true },
+                    { text: "Revenue increased and costs decreased.", note: "(missing comma)", correct: false },
+                    { text: "Revenue increased; costs decreased.", note: "(semicolon works too)", correct: true },
+                    { text: "Revenue increased, costs decreased.", note: "(comma splice, wrong)", correct: false }
+                ],
+                questions: [
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "The product launched and sales exceeded targets.",
+                            "The product launched, and sales exceeded targets."
+                        ],
+                        correct: 1,
+                        explanation: "Two independent clauses joined by 'and' need a comma before 'and'."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "We tested the feature but it failed.",
+                            "We tested the feature, but it failed."
+                        ],
+                        correct: 1,
+                        explanation: "Comma needed before 'but' when joining two complete sentences."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "The deadline is Friday, we must finish today.",
+                            "The deadline is Friday, so we must finish today."
+                        ],
+                        correct: 1,
+                        explanation: "Two complete sentences need a conjunction ('so') with the comma, not just a comma."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "She led the project and delivered on time.",
+                            "She led the project, and delivered on time."
+                        ],
+                        correct: 0,
+                        explanation: "No comma needed here. 'Delivered on time' is not a complete sentence (no subject)."
+                    }
+                ]
+            },
+            {
+                day: 17,
+                title: "Semicolon Usage",
+                topic: "Linking Related Ideas",
+                content: `Use semicolons to:
+1. Join two related independent clauses (instead of a period)
+2. Separate complex list items that contain commas
+
+Don't use semicolons before conjunctions (and, but, or) unless the clauses have internal commas.`,
+                examples: [
+                    { text: "Revenue grew 20%; margins improved 5%.", note: "(related ideas)", correct: true },
+                    { text: "We hired three roles: CFO, Seattle; VP Sales, London; Head of Ops, Austin.", note: "(complex list)", correct: true },
+                    { text: "Revenue grew; and margins improved.", note: "(don't use with 'and')", correct: false }
+                ],
+                questions: [
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "The test failed; we revised the approach.",
+                            "The test failed, we revised the approach.",
+                            "The test failed: we revised the approach."
+                        ],
+                        correct: 0,
+                        explanation: "Semicolon correctly joins two related independent clauses."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "Attendees included: Sarah, CFO; Mike, CTO; and Lisa, VP Sales.",
+                            "Attendees included: Sarah, CFO, Mike, CTO, and Lisa, VP Sales."
+                        ],
+                        correct: 0,
+                        explanation: "Use semicolons in lists when items contain commas (for clarity)."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "Sales dropped; but we stayed profitable.",
+                            "Sales dropped, but we stayed profitable."
+                        ],
+                        correct: 1,
+                        explanation: "Don't use semicolons with conjunctions (and, but, or). Use commas."
+                    }
+                ]
+            },
+            {
+                day: 18,
+                title: "Restrictive Clauses",
+                topic: "Essential vs Non-essential Information",
+                content: `Restrictive (essential) clauses define which thing you're talking about. No commas.
+Non-restrictive (extra info) clauses add detail. Use commas.
+
+Test: If removing the clause changes which thing you mean, it's restrictive (no commas).`,
+                examples: [
+                    { text: "Employees who miss training will be contacted.", note: "(only those who miss)", correct: true },
+                    { text: "Our CFO, who joined in 2020, led the audit.", note: "(extra info)", correct: true },
+                    { text: "The report that I sent yesterday was approved.", note: "(specifies which report)", correct: true }
+                ],
+                questions: [
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "Products, that fail testing, are rejected.",
+                            "Products that fail testing are rejected."
+                        ],
+                        correct: 1,
+                        explanation: "Restrictive clause (defines which products). No commas."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "My manager who works remotely approved the request.",
+                            "My manager, who works remotely, approved the request."
+                        ],
+                        correct: 1,
+                        explanation: "Non-restrictive (extra detail about your one manager). Use commas."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "Candidates who have MBAs will be prioritized.",
+                            "Candidates, who have MBAs, will be prioritized."
+                        ],
+                        correct: 0,
+                        explanation: "Restrictive (only candidates with MBAs). No commas."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "The strategy, which we finalized last week, launches Monday.",
+                            "The strategy which we finalized last week launches Monday."
+                        ],
+                        correct: 0,
+                        explanation: "Non-restrictive (adds when it was finalized, but doesn't specify which strategy). Use commas."
+                    }
+                ]
+            },
+            {
+                day: 19,
+                title: "Apostrophe Rules",
+                topic: "Possession and Contractions",
+                content: `Apostrophes show:
+1. Possession: The company's revenue (singular), the companies' revenue (plural)
+2. Contractions: don't, can't, it's (avoid in formal writing)
+
+Never use apostrophes for plurals.
+
+Its vs it's: 'its' = possessive, 'it's' = it is`,
+                examples: [
+                    { text: "The CEO's decision was final.", note: "(singular possession)", correct: true },
+                    { text: "The investors' concerns were addressed.", note: "(plural possession)", correct: true },
+                    { text: "The 1990s saw rapid growth.", note: "(plural, no apostrophe)", correct: true },
+                    { text: "Don't send that email.", note: "(contraction, informal)", correct: true }
+                ],
+                questions: [
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "The teams progress was significant.",
+                            "The team's progress was significant.",
+                            "The teams' progress was significant."
+                        ],
+                        correct: 1,
+                        explanation: "Singular possession (one team). Add apostrophe before 's'."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "The clients feedback was positive.",
+                            "The client's feedback was positive.",
+                            "The clients' feedback was positive."
+                        ],
+                        correct: 2,
+                        explanation: "If referring to multiple clients, use 'clients'' (plural possessive)."
+                    },
+                    {
+                        q: "Which is correct for formal writing?",
+                        options: [
+                            "We can't meet the deadline.",
+                            "We cannot meet the deadline."
+                        ],
+                        correct: 1,
+                        explanation: "Avoid contractions in formal writing. Write 'cannot' not 'can't'."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "The company lost it's competitive edge.",
+                            "The company lost its competitive edge."
+                        ],
+                        correct: 1,
+                        explanation: "'Its' is possessive (no apostrophe). 'It's' = 'it is' (contraction)."
+                    }
+                ]
+            },
+            {
+                day: 20,
+                title: "Nominalization",
+                topic: "Turning Verbs into Nouns (and Why Not To)",
+                content: `Nominalization turns verbs into nouns. It makes writing weaker and wordier.
+
+Weak: "We conducted an analysis of the data."
+Strong: "We analyzed the data."
+
+Common nominalizations to avoid:
+- make a decision → decide
+- conduct an investigation → investigate
+- provide assistance → assist
+- give consideration to → consider`,
+                examples: [
+                    { text: "We analyzed the data.", note: "(verb form, strong)", correct: true },
+                    { text: "We conducted an analysis of the data.", note: "(nominalized, weak)", correct: false },
+                    { text: "We decided to pivot.", note: "(strong)", correct: true },
+                    { text: "We made a decision to pivot.", note: "(nominalized)", correct: false }
+                ],
+                questions: [
+                    {
+                        q: "Which is stronger?",
+                        options: [
+                            "We will make an evaluation of the candidates.",
+                            "We will evaluate the candidates."
+                        ],
+                        correct: 1,
+                        explanation: "'Evaluate' is direct and clear. 'Make an evaluation' is wordy nominalization."
+                    },
+                    {
+                        q: "Which is stronger?",
+                        options: [
+                            "The team provided assistance to the client.",
+                            "The team assisted the client."
+                        ],
+                        correct: 1,
+                        explanation: "'Assisted' is the verb form. 'Provided assistance' is weaker."
+                    },
+                    {
+                        q: "Which is stronger?",
+                        options: [
+                            "We gave consideration to all options.",
+                            "We considered all options."
+                        ],
+                        correct: 1,
+                        explanation: "'Considered' is direct. 'Gave consideration' is nominalized and wordy."
+                    },
+                    {
+                        q: "Which is stronger?",
+                        options: [
+                            "The board conducted an investigation.",
+                            "The board investigated."
+                        ],
+                        correct: 1,
+                        explanation: "'Investigated' is the strong verb. Avoid turning verbs into nouns."
+                    }
+                ]
+            },
+            {
+                day: 21,
+                title: "Colon Usage",
+                topic: "Introducing Lists and Explanations",
+                content: `Use colons to introduce:
+1. Lists or series
+2. Explanations or elaborations
+3. Quotes (in formal writing)
+
+Rule: What comes before the colon must be a complete sentence.
+
+Wrong: "We need: strategy, execution, results."
+Right: "We need three things: strategy, execution, results."`,
+                examples: [
+                    { text: "We identified three risks: budget, timeline, scope.", note: "(introduces list)", correct: true },
+                    { text: "The issue is clear: we lack resources.", note: "(introduces explanation)", correct: true },
+                    { text: "Remember this: quality over speed.", note: "(introduces elaboration)", correct: true },
+                    { text: "Attendees include: Sarah, Mike, Lisa.", note: "(incomplete before colon)", correct: false }
+                ],
+                questions: [
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "We need: staff, budget, and time.",
+                            "We need three resources: staff, budget, and time."
+                        ],
+                        correct: 1,
+                        explanation: "Before the colon must be a complete sentence. 'We need three resources' is complete."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "The problem is: insufficient data.",
+                            "The problem is insufficient data."
+                        ],
+                        correct: 1,
+                        explanation: "Don't use a colon after 'is' unless you're introducing a list or long explanation."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "Our goals are: growth, retention, and profit.",
+                            "Our goals are growth, retention, and profit."
+                        ],
+                        correct: 1,
+                        explanation: "No colon needed after 'are' for simple lists. Just list them."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "One metric matters: customer retention.",
+                            "One metric matters, customer retention."
+                        ],
+                        correct: 0,
+                        explanation: "Colon introduces an explanation. Complete sentence before it works."
+                    }
+                ]
+            },
+            {
+                day: 22,
+                title: "Hyphens in Compound Modifiers",
+                topic: "When to Hyphenate",
+                content: `Use hyphens in compound modifiers (two words acting as one adjective) that come before a noun.
+
+Hyphenate: "long-term strategy" (before noun)
+Don't hyphenate: "the strategy is long term" (after noun)
+Don't hyphenate: words ending in -ly (naturally occurring)
+
+Examples: high-quality product, well-known fact, decision-making process`,
+                examples: [
+                    { text: "We need a long-term solution.", note: "(before noun)", correct: true },
+                    { text: "The solution is long term.", note: "(after noun, no hyphen)", correct: true },
+                    { text: "This is a highly competitive market.", note: "(-ly word, no hyphen)", correct: true },
+                    { text: "We improved decision-making processes.", note: "(compound modifier)", correct: true }
+                ],
+                questions: [
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "We developed a high quality product.",
+                            "We developed a high-quality product."
+                        ],
+                        correct: 1,
+                        explanation: "Compound modifier before a noun needs a hyphen: 'high-quality product'."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "The product is high-quality.",
+                            "The product is high quality."
+                        ],
+                        correct: 1,
+                        explanation: "After the noun, no hyphen needed. 'Is high quality' is correct."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "This is a rapidly-growing market.",
+                            "This is a rapidly growing market."
+                        ],
+                        correct: 1,
+                        explanation: "Don't hyphenate when the first word ends in -ly. 'Rapidly growing' is correct."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "We need real time data.",
+                            "We need real-time data."
+                        ],
+                        correct: 1,
+                        explanation: "Compound modifier before noun: 'real-time data'."
+                    }
+                ]
+            },
+            {
+                day: 23,
+                title: "Verb Tense Consistency",
+                topic: "Maintaining Timeline Clarity",
+                content: `Stay in one tense unless the timeline actually changes.
+
+Wrong: "We tested the feature and it fails."
+Right: "We tested the feature and it failed."
+
+Also right: "We tested the feature and it still fails." (different timelines)
+
+Business writing typically uses present or past tense. Stay consistent within paragraphs.`,
+                examples: [
+                    { text: "We launched in Q3 and saw immediate results.", note: "(both past)", correct: true },
+                    { text: "We launched in Q3 and see immediate results.", note: "(inconsistent)", correct: false },
+                    { text: "We tested thoroughly, but the bug persists.", note: "(timeline shift is intentional)", correct: true }
+                ],
+                questions: [
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "The team analyzed the data and finds errors.",
+                            "The team analyzed the data and found errors."
+                        ],
+                        correct: 1,
+                        explanation: "Both actions happened in the past. Keep past tense: 'found'."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "We redesigned the UI and improve conversion.",
+                            "We redesigned the UI and improved conversion."
+                        ],
+                        correct: 1,
+                        explanation: "Same timeline (both past). Use 'improved'."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "The report shows trends and highlighted risks.",
+                            "The report shows trends and highlights risks."
+                        ],
+                        correct: 1,
+                        explanation: "Present tense throughout. The report currently shows and highlights."
+                    },
+                    {
+                        q: "Which is acceptable?",
+                        options: [
+                            "We launched the product last month and it performs well.",
+                            "We launched the product last month and it performed well."
+                        ],
+                        correct: 0,
+                        explanation: "Timeline shift is intentional (launched = past, performs = ongoing now). This is fine."
+                    }
+                ]
+            },
+            {
+                day: 24,
+                title: "Subject-Verb Agreement",
+                topic: "Matching Number",
+                content: `Singular subjects take singular verbs. Plural subjects take plural verbs.
+
+Tricky cases:
+- "The team" is singular (the team decides, not decide)
+- "Data" can be singular or plural (both are acceptable now)
+- Intervening phrases don't change the subject
+
+"The CEO, along with the board, decides." (singular)
+"The CEO and the board decide." (plural)`,
+                examples: [
+                    { text: "The team decides strategy.", note: "(team is singular)", correct: true },
+                    { text: "The team members decide strategy.", note: "(members is plural)", correct: true },
+                    { text: "The data shows clear trends.", note: "(data as singular, acceptable)", correct: true },
+                    { text: "The data show clear trends.", note: "(data as plural, also acceptable)", correct: true }
+                ],
+                questions: [
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "The board of directors meet weekly.",
+                            "The board of directors meets weekly."
+                        ],
+                        correct: 1,
+                        explanation: "'Board' is singular (one board). 'Of directors' doesn't change this. Use 'meets'."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "Each of the proposals need review.",
+                            "Each of the proposals needs review."
+                        ],
+                        correct: 1,
+                        explanation: "'Each' is singular. 'Of the proposals' is a prepositional phrase. Use 'needs'."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "The CEO, along with senior staff, approve the budget.",
+                            "The CEO, along with senior staff, approves the budget."
+                        ],
+                        correct: 1,
+                        explanation: "Subject is 'CEO' (singular). 'Along with' is not 'and'. Use 'approves'."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "Neither the managers nor the CEO want to proceed.",
+                            "Neither the managers nor the CEO wants to proceed."
+                        ],
+                        correct: 1,
+                        explanation: "With 'neither...nor', verb agrees with the closest subject (CEO, singular)."
+                    }
+                ]
+            },
+            {
+                day: 25,
+                title: "Preposition Usage",
+                topic: "Common Prepositional Errors",
+                content: `Different from (not different than)
+Comply with (not comply to)
+Identical to (not identical with)
+Independent of (not independent from)
+
+Prepositions are often idiomatic. When unsure, check usage examples.
+
+Ending sentences with prepositions is fine in modern English, despite old rules.`,
+                examples: [
+                    { text: "This approach is different from the last one.", note: "(different from)", correct: true },
+                    { text: "We must comply with regulations.", note: "(comply with)", correct: true },
+                    { text: "The results are identical to last year's.", note: "(identical to)", correct: true },
+                    { text: "The decision is independent of cost.", note: "(independent of)", correct: true }
+                ],
+                questions: [
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "Our strategy is different than theirs.",
+                            "Our strategy is different from theirs."
+                        ],
+                        correct: 1,
+                        explanation: "Use 'different from' (not 'different than')."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "We must comply to industry standards.",
+                            "We must comply with industry standards."
+                        ],
+                        correct: 1,
+                        explanation: "'Comply with' is the correct idiom (not 'comply to')."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "This process is identical with the old one.",
+                            "This process is identical to the old one."
+                        ],
+                        correct: 1,
+                        explanation: "'Identical to' is correct (not 'identical with')."
+                    },
+                    {
+                        q: "Which is correct?",
+                        options: [
+                            "Quality is independent from cost.",
+                            "Quality is independent of cost."
+                        ],
+                        correct: 1,
+                        explanation: "'Independent of' is correct (not 'independent from')."
+                    }
+                ]
+            },
+            {
+                day: 26,
+                title: "Redundancy Elimination",
+                topic: "Cutting Duplicate Meaning",
+                content: `Remove redundant phrases:
+- "Past history" → history
+- "Advance planning" → planning
+- "End result" → result
+- "Brief summary" → summary
+- "Completely eliminate" → eliminate
+- "Currently ongoing" → ongoing
+
+Each word should add meaning. If removing it doesn't change the meaning, cut it.`,
+                examples: [
+                    { text: "We reviewed the company's history.", note: "(not 'past history')", correct: true },
+                    { text: "Planning is essential.", note: "(not 'advance planning')", correct: true },
+                    { text: "The result was positive.", note: "(not 'end result')", correct: true }
+                ],
+                questions: [
+                    {
+                        q: "Which is more concise?",
+                        options: [
+                            "We need advance planning for the launch.",
+                            "We need planning for the launch."
+                        ],
+                        correct: 1,
+                        explanation: "'Advance' is redundant. Planning is always done in advance."
+                    },
+                    {
+                        q: "Which is more concise?",
+                        options: [
+                            "The end result exceeded expectations.",
+                            "The result exceeded expectations."
+                        ],
+                        correct: 1,
+                        explanation: "'End' is redundant. Results are already final outcomes."
+                    },
+                    {
+                        q: "Which is more concise?",
+                        options: [
+                            "We completely eliminated the error.",
+                            "We eliminated the error."
+                        ],
+                        correct: 1,
+                        explanation: "'Completely' is redundant. Eliminate already means complete removal."
+                    },
+                    {
+                        q: "Which is more concise?",
+                        options: [
+                            "Here's a brief summary of the findings.",
+                            "Here's a summary of the findings."
+                        ],
+                        correct: 1,
+                        explanation: "'Brief' is redundant. Summaries are by definition brief."
+                    }
+                ]
+            },
+            {
+                day: 27,
+                title: "Formal vs Informal Register",
+                topic: "Choosing Appropriate Language",
+                content: `Formal business writing:
+- Avoid contractions (don't → do not)
+- Avoid slang and colloquialisms
+- Use precise vocabulary
+- Avoid exclamation points
+- Use complete sentences
+
+Informal (emails, chats):
+- Contractions are fine
+- Conversational tone acceptable
+- Fragments acceptable for emphasis
+
+Know your audience and medium.`,
+                examples: [
+                    { text: "We cannot proceed without approval.", note: "(formal)", correct: true },
+                    { text: "We can't proceed without approval.", note: "(informal)", correct: true },
+                    { text: "The initiative failed to meet objectives.", note: "(formal)", correct: true },
+                    { text: "The project didn't work out.", note: "(informal)", correct: true }
+                ],
+                questions: [
+                    {
+                        q: "Which is more formal?",
+                        options: [
+                            "We're excited to announce the launch!",
+                            "We are pleased to announce the launch."
+                        ],
+                        correct: 1,
+                        explanation: "Formal writing avoids contractions and exclamation points. 'Pleased' is more formal than 'excited'."
+                    },
+                    {
+                        q: "Which is more formal?",
+                        options: [
+                            "The deal fell through.",
+                            "The transaction did not proceed."
+                        ],
+                        correct: 1,
+                        explanation: "'Fell through' is colloquial. 'Did not proceed' is formal and precise."
+                    },
+                    {
+                        q: "Which is appropriate for a board report?",
+                        options: [
+                            "Revenue tanked in Q3.",
+                            "Revenue declined significantly in Q3."
+                        ],
+                        correct: 1,
+                        explanation: "'Tanked' is slang. Use precise, formal language in board reports."
+                    },
+                    {
+                        q: "Which is appropriate for internal team chat?",
+                        options: [
+                            "I am unable to attend the meeting.",
+                            "Can't make the meeting."
+                        ],
+                        correct: 1,
+                        explanation: "Informal contexts (chat) allow contractions and fragments for efficiency."
+                    }
+                ]
+            },
+            {
+                day: 28,
+                title: "Misplaced Modifiers",
+                topic: "Placing Descriptors Correctly",
+                content: `Place modifiers next to what they modify.
+
+Wrong: "We only tested three features." (implies we didn't do anything else)
+Right: "We tested only three features." (clarifies the limitation)
+
+Common misplacements:
+- only, just, nearly, almost, even
+Place these directly before what they modify.`,
+                examples: [
+                    { text: "We tested only three features.", note: "(clarifies quantity)", correct: true },
+                    { text: "We only tested three features.", note: "(ambiguous)", correct: false },
+                    { text: "Nearly 50 people attended.", note: "(modifies 50)", correct: true },
+                    { text: "We nearly lost 50 people.", note: "(modifies lost)", correct: true }
+                ],
+                questions: [
+                    {
+                        q: "Which is clearer?",
+                        options: [
+                            "We only need approval from the CEO.",
+                            "We need approval only from the CEO."
+                        ],
+                        correct: 1,
+                        explanation: "'Only' should be next to 'from the CEO' to clarify we don't need other approvals."
+                    },
+                    {
+                        q: "Which is clearer?",
+                        options: [
+                            "The team almost completed all tasks.",
+                            "The team completed almost all tasks."
+                        ],
+                        correct: 1,
+                        explanation: "'Almost' modifies 'all tasks' (nearly all). First version suggests they nearly completed them."
+                    },
+                    {
+                        q: "Which is clearer?",
+                        options: [
+                            "We just hired five people.",
+                            "We hired just five people."
+                        ],
+                        correct: 1,
+                        explanation: "'Just' modifies 'five' (only five). First version suggests recent timing."
+                    },
+                    {
+                        q: "Which is clearer?",
+                        options: [
+                            "The client nearly spent $100K.",
+                            "The client spent nearly $100K."
+                        ],
+                        correct: 1,
+                        explanation: "'Nearly' modifies the amount ($100K). First version suggests they almost spent it but didn't."
+                    }
+                ]
+            },
+            {
+                day: 29,
+                title: "Precision in Word Choice",
+                topic: "Using Exact Terms",
+                content: `Choose precise words over vague ones:
+
+Vague → Precise:
+- things → factors, elements, components
+- got → received, obtained, acquired
+- make → create, develop, build, generate
+- good → effective, beneficial, valuable
+- bad → detrimental, ineffective, problematic
+
+Precision makes business writing professional and clear.`,
+                examples: [
+                    { text: "We identified key factors affecting growth.", note: "(not 'things')", correct: true },
+                    { text: "The strategy proved effective.", note: "(not 'good')", correct: true },
+                    { text: "We received board approval.", note: "(not 'got')", correct: true }
+                ],
+                questions: [
+                    {
+                        q: "Which is more precise?",
+                        options: [
+                            "We got approval from the board.",
+                            "We received approval from the board."
+                        ],
+                        correct: 1,
+                        explanation: "'Received' is more precise and professional than 'got'."
+                    },
+                    {
+                        q: "Which is more precise?",
+                        options: [
+                            "Several things contributed to the failure.",
+                            "Several factors contributed to the failure."
+                        ],
+                        correct: 1,
+                        explanation: "'Factors' is specific. 'Things' is vague and unprofessional."
+                    },
+                    {
+                        q: "Which is more precise?",
+                        options: [
+                            "The campaign was really good.",
+                            "The campaign was highly effective."
+                        ],
+                        correct: 1,
+                        explanation: "'Highly effective' is precise and measurable. 'Really good' is vague."
+                    },
+                    {
+                        q: "Which is more precise?",
+                        options: [
+                            "We need to make a new process.",
+                            "We need to develop a new process."
+                        ],
+                        correct: 1,
+                        explanation: "'Develop' is more specific than 'make' in professional contexts."
+                    }
+                ]
+            },
+            {
+                day: 30,
+                title: "Final Integration: Business Memo",
+                topic: "Applying All Skills",
+                content: `This final lesson tests everything: active voice, concision, parallel structure, formal register, precise language, proper punctuation, and clear organization.
+
+A strong business memo:
+- States purpose upfront
+- Uses active voice
+- Eliminates redundancy
+- Maintains formal tone
+- Uses precise vocabulary
+- Follows all grammar rules
+
+Review previous days if needed.`,
+                examples: [
+                    { text: "Purpose: Recommend Q4 strategy changes.\n\nAnalysis shows three issues: declining retention, rising costs, and market saturation. We propose: (1) enhance customer success, (2) optimize operations, (3) diversify offerings.\n\nImplementation begins November 1.", note: "(strong memo)", correct: true }
+                ],
+                questions: [
+                    {
+                        q: "Which memo opening is stronger?",
+                        options: [
+                            "This memo is to inform you about the issues that were identified.",
+                            "This memo identifies three critical issues."
+                        ],
+                        correct: 1,
+                        explanation: "Second is concise, active, and direct. First is wordy and passive."
+                    },
+                    {
+                        q: "Which is better for a recommendation section?",
+                        options: [
+                            "We recommend hiring, training staff, and to improve processes.",
+                            "We recommend hiring staff, training teams, and improving processes."
+                        ],
+                        correct: 1,
+                        explanation: "Parallel structure (all gerunds). First mixes infinitive with gerunds."
+                    },
+                    {
+                        q: "Which conclusion is more professional?",
+                        options: [
+                            "Let's discuss this ASAP!",
+                            "Please review and provide feedback by Friday."
+                        ],
+                        correct: 1,
+                        explanation: "Formal tone, specific deadline, no exclamation. First is too casual."
+                    },
+                    {
+                        q: "Which shows better concision?",
+                        options: [
+                            "Due to the fact that sales dropped, we need to pivot.",
+                            "Because sales dropped, we must pivot."
+                        ],
+                        correct: 1,
+                        explanation: "Second eliminates filler ('due to the fact that') and uses 'must' vs 'need to'."
+                    }
+                ]
+            }
+        ];
+
+        let progress = JSON.parse(localStorage.getItem('grammarProgress')) || {
+            currentDay: 1,
+            completedDays: [],
+            scores: {}
+        };
+
+        function saveProgress() {
+            localStorage.setItem('grammarProgress', JSON.stringify(progress));
+        }
+
+        function updateStats() {
+            document.getElementById('current-day').textContent = progress.currentDay;
+            document.getElementById('completed-count').textContent = progress.completedDays.length;
+            
+            const scores = Object.values(progress.scores);
+            const avgScore = scores.length > 0 
+                ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length)
+                : 0;
+            document.getElementById('total-score').textContent = avgScore;
+            
+            const progressPercent = (progress.completedDays.length / 30) * 100;
+            document.getElementById('progress-fill').style.width = progressPercent + '%';
+        }
+
+        function renderDaySelector() {
+            const selector = document.getElementById('day-selector');
+            selector.innerHTML = '';
+            
+            for (let i = 1; i <= 30; i++) {
+                const btn = document.createElement('button');
+                btn.className = 'day-btn';
+                btn.textContent = 'Day ' + i;
+                
+                if (progress.completedDays.includes(i)) {
+                    btn.classList.add('completed');
+                }
+                if (i === progress.currentDay) {
+                    btn.classList.add('current');
+                }
+                
+                btn.onclick = () => loadDay(i);
+                selector.appendChild(btn);
+            }
+        }
+
+        function loadDay(dayNum) {
+            progress.currentDay = dayNum;
+            saveProgress();
+            renderLesson(lessons[dayNum - 1]);
+            renderDaySelector();
+            updateStats();
+        }
+
+        function renderLesson(lesson) {
+            const container = document.getElementById('lesson-container');
+            
+            let html = `
+                <div class="day-header">
+                    <h2>Day ${lesson.day}: ${lesson.title}</h2>
+                    <div>${lesson.topic}</div>
+                </div>
+                
+                <div class="lesson">
+                    <h3>Today's Lesson</h3>
+                    ${lesson.content.split('\n\n').map(p => `<p>${p}</p>`).join('')}
+                    
+                    <h3 style="margin-top: 20px;">Examples</h3>
+                    ${lesson.examples.map(ex => `
+                        <div class="example">
+                            <span class="${ex.correct ? 'correct' : 'incorrect'}">${ex.correct ? '✓' : '✗'}</span>
+                            ${ex.text}
+                            <div style="font-size: 13px; color: #666; margin-top: 5px;">${ex.note}</div>
+                        </div>
+                    `).join('')}
+                </div>
+                
+                <div class="quiz">
+                    <h3 style="margin-bottom: 15px;">Quick Test (${lesson.questions.length} questions)</h3>
+                    ${lesson.questions.map((q, i) => `
+                        <div class="question" id="q${i}">
+                            <div class="question-text">${i + 1}. ${q.q}</div>
+                            <div class="options">
+                                ${q.options.map((opt, j) => `
+                                    <div class="option" data-question="${i}" data-option="${j}" onclick="selectOption(${i}, ${j})">
+                                        ${opt}
+                                    </div>
+                                `).join('')}
+                            </div>
+                            <div class="feedback" id="feedback${i}" style="display: none;"></div>
+                        </div>
+                    `).join('')}
+                </div>
+                
+                <div class="navigation">
+                    <button onclick="checkAnswers()" id="check-btn">Check Answers</button>
+                    ${progress.currentDay < 30 ? '<button onclick="nextDay()" id="next-btn" disabled>Next Day</button>' : ''}
+                    <button class="complete-btn" onclick="markComplete()" id="complete-btn" disabled>Mark Complete</button>
+                </div>
+                
+                <div id="day-complete-msg" style="display: none;" class="day-complete">
+                    Day ${lesson.day} completed! Score: <span id="day-score"></span>%
+                </div>
+            `;
+            
+            container.innerHTML = html;
+        }
+
+        const selectedAnswers = {};
+
+        function selectOption(questionIndex, optionIndex) {
+            selectedAnswers[questionIndex] = optionIndex;
+            
+            const options = document.querySelectorAll(`[data-question="${questionIndex}"]`);
+            options.forEach(opt => opt.classList.remove('selected'));
+            options[optionIndex].classList.add('selected');
+        }
+
+        function checkAnswers() {
+            const lesson = lessons[progress.currentDay - 1];
+            let correct = 0;
+            
+            lesson.questions.forEach((q, i) => {
+                const userAnswer = selectedAnswers[i];
+                const feedback = document.getElementById(`feedback${i}`);
+                const options = document.querySelectorAll(`[data-question="${i}"]`);
+                
+                options.forEach(opt => {
+                    opt.classList.remove('correct-answer', 'wrong-answer');
+                });
+                
+                if (userAnswer !== undefined) {
+                    const isCorrect = userAnswer === q.correct;
+                    if (isCorrect) correct++;
+                    
+                    feedback.className = 'feedback ' + (isCorrect ? 'correct' : 'incorrect');
+                    feedback.textContent = q.explanation;
+                    feedback.style.display = 'block';
+                    
+                    options[q.correct].classList.add('correct-answer');
+                    if (!isCorrect) {
+                        options[userAnswer].classList.add('wrong-answer');
+                    }
+                }
+            });
+            
+            const score = Math.round((correct / lesson.questions.length) * 100);
+            progress.scores[progress.currentDay] = score;
+            saveProgress();
+            updateStats();
+            
+            document.getElementById('day-score').textContent = score;
+            document.getElementById('day-complete-msg').style.display = 'block';
+            document.getElementById('complete-btn').disabled = false;
+            document.getElementById('check-btn').disabled = true;
+            
+            if (progress.currentDay < 30) {
+                document.getElementById('next-btn').disabled = false;
+            }
+        }
+
+        function markComplete() {
+            if (!progress.completedDays.includes(progress.currentDay)) {
+                progress.completedDays.push(progress.currentDay);
+                saveProgress();
+                renderDaySelector();
+                updateStats();
+            }
+        }
+
+        function nextDay() {
+            if (progress.currentDay < 30) {
+                loadDay(progress.currentDay + 1);
+            }
+        }
+
+        function resetProgress() {
+            if (confirm('Reset all progress? This cannot be undone.')) {
+                localStorage.removeItem('grammarProgress');
+                progress = {
+                    currentDay: 1,
+                    completedDays: [],
+                    scores: {}
+                };
+                loadDay(1);
+            }
+        }
+
+        // Initialize
+        renderDaySelector();
+        loadDay(progress.currentDay);
+    </script>
+</body>
+</html>
