@@ -287,11 +287,21 @@
                 topic: "I vs Me, They vs Them",
                 content: `The rule is simple: use subject pronouns (I, he, she, they, we) when the pronoun does the action. Use object pronouns (me, him, her, them, us) when the pronoun receives the action.
 
-The trick: Remove the other person from the sentence and see what sounds right.`,
+Subject pronouns: I, you, he, she, it, we, they
+Object pronouns: me, you, him, her, it, us, them
+
+The trick: Remove the other person from the sentence and see what sounds right. If you say "John and I went," try removing John: "I went" — that works. "Me went" doesn't. So "I" is correct.
+
+A common error in professional writing is using 'myself' as a replacement for 'I' or 'me'. Only use 'myself' for reflexive actions ("I hurt myself") or for emphasis ("I did it myself"). Never use it as a substitute for I or me.
+
+Prepositions like between, for, to, with, and from always take object pronouns. So it is always "between you and me," "for him and her," "with us," etc.`,
                 examples: [
-                    { text: "John and I went to the meeting.", note: "(I went, not me went)", correct: true },
-                    { text: "The report was sent to Sarah and me.", note: "(sent to me, not sent to I)", correct: true },
-                    { text: "Between you and me, this needs work.", note: "(always 'between...and me')", correct: true }
+                    { text: "John and I went to the meeting.", note: "(subject — I went, not me went)", correct: true },
+                    { text: "The report was sent to Sarah and me.", note: "(object — sent to me, not sent to I)", correct: true },
+                    { text: "Between you and me, this needs work.", note: "(always 'between...and me' — prepositions take object pronouns)", correct: true },
+                    { text: "She and I will present the findings.", note: "(both are subjects doing the action)", correct: true },
+                    { text: "The manager praised him and me.", note: "(both are objects receiving praise)", correct: true },
+                    { text: "Please send the report to Tom and myself.", note: "(incorrect — should be 'Tom and me')", correct: false }
                 ],
                 questions: [
                     {
@@ -326,11 +336,20 @@ The trick: Remove the other person from the sentence and see what sounds right.`
                 topic: "Restrictive vs Non-restrictive Clauses",
                 content: `Use 'that' for essential information (no commas). Use 'which' for extra information (with commas).
 
-If you can remove the clause and the sentence still makes sense, use 'which' with commas. If removing it changes the meaning, use 'that' with no commas.`,
+A restrictive clause uses 'that' and narrows down which specific thing you mean. Removing it would change the sentence's meaning. Example: "The file that is on my desk needs signing" — removing the clause leaves "The file needs signing," which could mean any file. The clause is essential.
+
+A non-restrictive clause uses 'which' and simply adds bonus information. Removing it leaves the sentence's core meaning intact. Example: "The contract, which arrived yesterday, is ready to sign" — removing the clause still tells you the contract is ready. The information is extra.
+
+A useful memory device: 'which' hunts with a pack (commas), while 'that' hunts alone (no commas).
+
+Note: In British English, 'which' is sometimes used for both types. In American business writing, follow the that/which distinction consistently.`,
                 examples: [
-                    { text: "The report that was submitted late needs revision.", note: "(specifies which report)", correct: true },
-                    { text: "The report, which was 50 pages, needs revision.", note: "(extra detail about the report)", correct: true },
-                    { text: "Products that fail testing are rejected.", note: "(only the ones that fail)", correct: true }
+                    { text: "The report that was submitted late needs revision.", note: "(restrictive — specifies which report)", correct: true },
+                    { text: "The report, which was 50 pages, needs revision.", note: "(non-restrictive — extra detail about one known report)", correct: true },
+                    { text: "Products that fail testing are rejected.", note: "(restrictive — only the ones that fail, not all products)", correct: true },
+                    { text: "Our new software, which launched in March, has 5,000 users.", note: "(non-restrictive — 'which launched in March' adds context)", correct: true },
+                    { text: "The clause which is most important appears on page 3.", note: "(should be 'that' — essential, no commas)", correct: false },
+                    { text: "Any employee that violates the policy will be reviewed.", note: "(restrictive 'that' — specifies which employees)", correct: true }
                 ],
                 questions: [
                     {
@@ -363,14 +382,26 @@ If you can remove the clause and the sentence still makes sense, use 'which' wit
                 day: 3,
                 title: "Comma Splices",
                 topic: "Fixing Run-on Sentences",
-                content: `A comma splice joins two complete sentences with just a comma. This is wrong.
+                content: `A comma splice joins two complete sentences (independent clauses) with just a comma. This is wrong.
 
-Fix it with: a period, a semicolon, a conjunction (and, but, so), or a dependent clause.`,
+An independent clause can stand alone as a sentence — it has its own subject and verb with a complete thought. When you join two of them with only a comma, you create a comma splice.
+
+Fix a comma splice using one of four methods:
+1. Period — make them two separate sentences.
+2. Semicolon — connect related ideas without a conjunction.
+3. Coordinating conjunction (and, but, or, nor, for, yet, so) — add one after the comma.
+4. Subordinating conjunction (although, because, since, while) — turn one clause into a dependent clause.
+
+Test: Ask yourself, could each part of the sentence stand alone? If yes, a comma alone is not enough to join them.
+
+Comma splices are common in casual writing but are errors in formal documents, reports, and emails.`,
                 examples: [
-                    { text: "Revenue increased, costs decreased.", note: "(comma splice)", correct: false },
-                    { text: "Revenue increased, and costs decreased.", note: "(fixed with conjunction)", correct: true },
+                    { text: "Revenue increased, costs decreased.", note: "(comma splice — two independent clauses joined by only a comma)", correct: false },
+                    { text: "Revenue increased, and costs decreased.", note: "(fixed with coordinating conjunction 'and')", correct: true },
                     { text: "Revenue increased; costs decreased.", note: "(fixed with semicolon)", correct: true },
-                    { text: "Revenue increased. Costs decreased.", note: "(fixed with period)", correct: true }
+                    { text: "Revenue increased. Costs decreased.", note: "(fixed with a period — two complete sentences)", correct: true },
+                    { text: "Although revenue increased, costs decreased.", note: "(fixed by subordinating one clause)", correct: true },
+                    { text: "The client called, we need to respond immediately.", note: "(comma splice — needs 'and' or a period between clauses)", correct: false }
                 ],
                 questions: [
                     {
@@ -412,12 +443,22 @@ Fix it with: a period, a semicolon, a conjunction (and, but, so), or a dependent
                 content: `It's = it is or it has (contraction)
 Its = belonging to it (possessive, like his or her)
 
-In professional writing, avoid contractions. Use 'it is' instead of 'it's'.`,
+The apostrophe in "it's" signals a missing letter — it is a contraction, not a possessive. This is the opposite of what most people expect, since we do use apostrophes for possession with nouns (the company's revenue). But pronouns — his, her, its, theirs, ours — never use an apostrophe for possession.
+
+Simple test: Replace "it's" with "it is" or "it has." If the sentence still makes sense, use the apostrophe. If not, use "its" (no apostrophe).
+
+Examples of the test:
+- "It's been a difficult quarter." → "It has been a difficult quarter." ✓ — use it's
+- "The brand lost it's appeal." → "The brand lost it is appeal." ✗ — use its
+
+In professional writing, avoid contractions entirely. Write 'it is' instead of 'it's'. This applies to all business documents, reports, and formal correspondence.`,
                 examples: [
-                    { text: "The company announced its quarterly results.", note: "(possessive)", correct: true },
-                    { text: "It's important to meet deadlines.", note: "(it is)", correct: true },
-                    { text: "The project lost its funding.", note: "(possessive)", correct: true },
-                    { text: "It's been three weeks since launch.", note: "(it has)", correct: true }
+                    { text: "The company announced its quarterly results.", note: "(possessive — belonging to it)", correct: true },
+                    { text: "It's important to meet deadlines.", note: "(it is important — contraction)", correct: true },
+                    { text: "The project lost its funding.", note: "(possessive — funding belonging to the project)", correct: true },
+                    { text: "It's been three weeks since launch.", note: "(it has been — contraction)", correct: true },
+                    { text: "The policy has its own exceptions.", note: "(possessive — exceptions belonging to it)", correct: true },
+                    { text: "The system lost it's configuration.", note: "(incorrect — should be 'its', no apostrophe)", correct: false }
                 ],
                 questions: [
                     {
@@ -457,12 +498,22 @@ In professional writing, avoid contractions. Use 'it is' instead of 'it's'.`,
 There = location or placeholder
 They're = they are (contraction, avoid in formal writing)
 
-Again, avoid contractions in business writing.`,
+These three words are homophones — they sound the same but have completely different meanings and uses. Confusing them is one of the most noticeable errors in professional writing.
+
+THEIR: Always shows possession by a group. Think of it this way — it contains the word "heir," which is about ownership and inheritance. If you can replace it with "our" (our = belonging to us, their = belonging to them), then "their" is correct.
+
+THERE: Points to a place or introduces a statement. When it's used as a placeholder (There are five issues), it is filling the position of the real subject. You can also think of it as containing the word "here" — both refer to location.
+
+THEY'RE: Always means "they are." Try substituting "they are" — if the sentence still works, use "they're." In formal writing, write "they are" instead.
+
+Common test: "The clients shared ___ concerns." → Can you say "the clients shared they are concerns"? No. Can you say "the clients shared our concerns"? Yes (same structure as "their concerns"). So use "their."`,
                 examples: [
-                    { text: "The team submitted their proposal.", note: "(possessive)", correct: true },
-                    { text: "There are three options to consider.", note: "(placeholder)", correct: true },
-                    { text: "They're launching next quarter.", note: "(they are)", correct: true },
-                    { text: "Put the files there.", note: "(location)", correct: true }
+                    { text: "The team submitted their proposal.", note: "(possessive — the proposal belonging to them)", correct: true },
+                    { text: "There are three options to consider.", note: "(placeholder — introduces the subject 'three options')", correct: true },
+                    { text: "They're launching next quarter.", note: "(they are — contraction; in formal writing, use 'they are')", correct: true },
+                    { text: "Put the files there.", note: "(location — pointing to a place)", correct: true },
+                    { text: "The vendors confirmed their attendance.", note: "(possessive — attendance belonging to the vendors)", correct: true },
+                    { text: "There concerns were addressed in the meeting.", note: "(incorrect — should be 'their concerns')", correct: false }
                 ],
                 questions: [
                     {
@@ -501,14 +552,25 @@ Again, avoid contractions in business writing.`,
                 content: `Who = subject (does the action)
 Whom = object (receives the action)
 
-Quick test: If you'd answer with he/she, use 'who'. If you'd answer with him/her, use 'whom'.
+Quick test: If you'd answer with he/she, use 'who'. If you'd answer with him/her, use 'whom'. The 'm' in 'whom' matches the 'm' in 'him' — a helpful memory trick.
 
-Note: 'Whom' is declining in everyday use, but it's still correct in formal writing.`,
+Examples of the test in action:
+- "Who wrote the report?" → He wrote it. Use WHO.
+- "Whom did they promote?" → They promoted him. Use WHOM.
+- "To whom should I address this?" → Address it to her. Use WHOM.
+
+'Whom' is used most often after prepositions (to, from, for, with, by). Whenever you see "to ___" or "for ___," that blank will almost always need 'whom,' not 'who.'
+
+In relative clauses within a sentence, the same rule applies: "The person who wrote this is talented" (who is the subject writing). "The person whom they promoted is talented" (whom received the action of being promoted).
+
+Note: 'Whom' is declining in everyday speech, but it is still standard in formal business writing. Using 'who' everywhere in a formal document will mark you as less polished.`,
                 examples: [
-                    { text: "Who sent this email? (He sent it)", note: "(subject)", correct: true },
-                    { text: "To whom should I send this? (Send it to him)", note: "(object)", correct: true },
-                    { text: "Who is leading the project?", note: "(subject)", correct: true },
-                    { text: "Whom did you meet? (I met her)", note: "(object)", correct: true }
+                    { text: "Who sent this email? (He sent it.)", note: "(subject — use who)", correct: true },
+                    { text: "To whom should I send this? (Send it to him.)", note: "(object of 'to' — use whom)", correct: true },
+                    { text: "Who is leading the project? (She is leading it.)", note: "(subject — use who)", correct: true },
+                    { text: "Whom did you meet? (I met her.)", note: "(object — use whom)", correct: true },
+                    { text: "The candidate who applied yesterday is strong.", note: "(who is the subject of 'applied')", correct: true },
+                    { text: "The candidate whom we interviewed is strong.", note: "(whom is the object of 'interviewed')", correct: true }
                 ],
                 questions: [
                     {
@@ -544,14 +606,28 @@ Note: 'Whom' is declining in everyday use, but it's still correct in formal writ
                 content: `Affect = verb (to influence)
 Effect = noun (the result)
 
-Rare exceptions: 'effect' as a verb means 'to cause' (effect change). 'Affect' as a noun is psychology jargon.
+The key distinction: 'affect' is what you do (action, verb), 'effect' is what happens as a result (end outcome, noun).
 
-In 95% of cases: affect is the verb, effect is the noun.`,
+Memory trick: Use RAVEN — Remember, Affect is a Verb, Effect is a Noun.
+
+Another way to test: Try replacing the word. If you can substitute "influence," use affect. If you can substitute "result" or "outcome," use effect.
+
+Sentence patterns:
+- "X will affect Y" — affect is the verb (X influences Y)
+- "The effect of X on Y" — effect is a noun preceded by an article (the, an)
+- "X had an effect" — effect follows an article, so it's a noun
+- "X will affect Y" → "X will effect change" — rare verb use meaning 'to bring about'
+
+Rare exceptions to know:
+- 'Effect' as a verb means to bring something about: "The new leader effected significant change." (Brought about change — this is formal and uncommon.)
+- 'Affect' as a noun appears in psychology: "The patient showed flat affect." (Don't use this in business writing.)`,
                 examples: [
-                    { text: "The policy will affect all employees.", note: "(verb: influence)", correct: true },
-                    { text: "The policy had a positive effect.", note: "(noun: result)", correct: true },
-                    { text: "Budget cuts affect performance.", note: "(verb)", correct: true },
-                    { text: "We aim to effect change.", note: "(verb: cause, rare)", correct: true }
+                    { text: "The policy will affect all employees.", note: "(verb: will influence all employees)", correct: true },
+                    { text: "The policy had a positive effect.", note: "(noun: a positive result/outcome)", correct: true },
+                    { text: "Budget cuts affect performance.", note: "(verb: influence performance)", correct: true },
+                    { text: "We aim to effect change in the industry.", note: "(verb meaning 'bring about' — formal and rare)", correct: true },
+                    { text: "What effect will the merger have on headcount?", note: "(noun: what result/outcome)", correct: true },
+                    { text: "The new regulations will effect our timeline.", note: "(incorrect — should be 'affect', meaning influence)", correct: false }
                 ],
                 questions: [
                     {
@@ -584,14 +660,28 @@ In 95% of cases: affect is the verb, effect is the noun.`,
                 day: 8,
                 title: "Less vs Fewer",
                 topic: "Countable vs Uncountable",
-                content: `Fewer = countable items (things you can count)
-Less = uncountable mass (things you measure)
+                content: `Fewer = countable items (things you can count individually)
+Less = uncountable mass (things you measure as a whole)
 
-Simple rule: If you can count it, use 'fewer'. If you measure it, use 'less'.`,
+Simple rule: If you can count it one by one, use 'fewer'. If you measure it (like water, time, money, energy), use 'less'.
+
+Countable examples: employees, meetings, customers, applications, features, bugs — use FEWER
+Uncountable examples: time, money, effort, traffic, noise, information, data — use LESS
+
+The grocery store "10 items or less" sign is actually grammatically incorrect — it should be "10 items or fewer" because items are countable. This error is so widespread that many people accept it, but in professional writing, use the correct form.
+
+Edge cases:
+- Money as a lump sum uses 'less': "We have less than $10,000 in the budget." (measured as a total)
+- Specific currency units use 'fewer': "We have fewer than ten dollar bills." (individual bills you can count)
+- Time as a lump uses 'less': "It takes less time." (time measured as a whole)
+- Time as units uses 'fewer': "Fewer than three days remain." (countable days)`,
                 examples: [
-                    { text: "Fewer employees means less overhead.", note: "(count employees, measure overhead)", correct: true },
-                    { text: "We need fewer meetings and less bureaucracy.", note: "(count meetings, measure bureaucracy)", correct: true },
-                    { text: "Less than $500 (but: fewer than 500 dollars)", note: "(money is measured)", correct: true }
+                    { text: "Fewer employees means less overhead.", note: "(count employees, measure overhead as a whole)", correct: true },
+                    { text: "We need fewer meetings and less bureaucracy.", note: "(count individual meetings, measure bureaucracy)", correct: true },
+                    { text: "We have less than $50,000 in reserve.", note: "(money as a measured total — use less)", correct: true },
+                    { text: "We received fewer than 20 applications.", note: "(applications are countable — use fewer)", correct: true },
+                    { text: "The new process requires less effort and fewer steps.", note: "(effort is measured, steps are counted)", correct: true },
+                    { text: "We need less employees on this project.", note: "(incorrect — employees are countable, use 'fewer')", correct: false }
                 ],
                 questions: [
                     {
@@ -624,19 +714,29 @@ Simple rule: If you can count it, use 'fewer'. If you measure it, use 'less'.`,
                 day: 9,
                 title: "Lay vs Lie",
                 topic: "Transitive vs Intransitive Verbs",
-                content: `Lay = to place something (needs an object)
-Lie = to recline (no object)
+                content: `Lay = to place something (needs a direct object — someone places something)
+Lie = to recline or to be in a horizontal position (no direct object — someone or something lies on its own)
 
-Present: I lay the report down. I lie down.
-Past: I laid the report down. I lay down.
-Past participle: I have laid it down. I have lain down.
+The key distinction: LAY requires an object. You lay something down. LIE has no object. You just lie down.
 
-This is confusing because 'lay' is both present tense of 'lay' and past tense of 'lie'.`,
+Full conjugation table:
+          Present    Past    Past Participle
+Lay:      lay        laid    laid
+Lie:      lie        lay     lain
+
+The reason this is so confusing: the past tense of LIE is LAY. So "He lay on the floor" is correct past tense (he reclined), while "He lay the file on the desk" is also correct present tense (he places the file). Context is everything.
+
+In business contexts, you will rarely use "lie down" literally. More commonly you will encounter this in phrases like:
+- "The opportunity lies ahead." (lie = exists/rests, no object)
+- "Lay out the plan." (lay = place/present, has an object)
+- "The groundwork was laid." (past participle of lay)`,
                 examples: [
-                    { text: "Please lay the documents on the desk.", note: "(place them)", correct: true },
-                    { text: "I need to lie down.", note: "(recline myself)", correct: true },
-                    { text: "Yesterday I laid out the plan.", note: "(past of lay)", correct: true },
-                    { text: "Yesterday I lay on the couch.", note: "(past of lie)", correct: true }
+                    { text: "Please lay the documents on the desk.", note: "(lay = place; 'the documents' is the object)", correct: true },
+                    { text: "The solution lies in better communication.", note: "(lie = exists/rests; no object)", correct: true },
+                    { text: "Yesterday I laid out the plan step by step.", note: "(past of lay; 'the plan' is the object)", correct: true },
+                    { text: "Yesterday I lay on the couch after the long meeting.", note: "(past of lie; no object)", correct: true },
+                    { text: "The groundwork has been laid for the next phase.", note: "(past participle of lay)", correct: true },
+                    { text: "Please lay down and rest before the presentation.", note: "(incorrect — should be 'lie down'; no object being placed)", correct: false }
                 ],
                 questions: [
                     {
@@ -671,14 +771,28 @@ This is confusing because 'lay' is both present tense of 'lay' and past tense of
                 topic: "Expressing Hypotheticals and Demands",
                 content: `Use subjunctive mood for wishes, suggestions, demands, and contrary-to-fact statements.
 
-Key pattern: After 'if', 'wish', 'suggest', 'require', 'demand', use the base verb form (without 's').
+The subjunctive is a verb form (or mood) used for hypothetical, wished-for, or required situations — not for things that are actually true.
 
-Most common: 'If I were' (not 'if I was') for hypotheticals.`,
+Two key uses in business writing:
+
+1. Contrary-to-fact conditions: Use 'were' (not 'was') for hypotheticals with 'if' or 'wish'.
+   - "If I were the manager..." (I'm not the manager — hypothetical)
+   - "I wish she were available." (She isn't available)
+   - How to tell: If the situation is currently false, use 'were' for all subjects.
+
+2. Mandates and recommendations: After verbs like suggest, recommend, require, demand, insist, and phrases like "it is essential/critical/important that," use the base verb form (no -s ending, no -ed).
+   - "I recommend that she submit the report." (not 'submits')
+   - "The board requires that he attend." (not 'attends')
+   - "It is essential that the data be verified." (not 'is verified')
+
+This second pattern trips people up because they instinctively add -s for third-person singular. Resist that impulse after mandating verbs.`,
                 examples: [
-                    { text: "If I were CEO, I'd restructure.", note: "(contrary to fact)", correct: true },
-                    { text: "I suggest that he attend the meeting.", note: "(not 'attends')", correct: true },
-                    { text: "It's critical that she review this.", note: "(not 'reviews')", correct: true },
-                    { text: "I wish I were able to help.", note: "(not 'was')", correct: true }
+                    { text: "If I were CEO, I would restructure the team.", note: "(contrary to fact — use 'were', not 'was')", correct: true },
+                    { text: "I suggest that he attend the meeting.", note: "(mandate pattern — base form 'attend', not 'attends')", correct: true },
+                    { text: "It is critical that she review the contract immediately.", note: "(mandate pattern — 'review', not 'reviews')", correct: true },
+                    { text: "I wish I were able to offer a better outcome.", note: "(wish — hypothetical, use 'were')", correct: true },
+                    { text: "The policy requires that all staff complete the training.", note: "(mandate pattern — 'complete', not 'completes')", correct: true },
+                    { text: "If I was in charge, I would change this process.", note: "(incorrect — hypothetical requires 'were', not 'was')", correct: false }
                 ],
                 questions: [
                     {
@@ -711,17 +825,34 @@ Most common: 'If I were' (not 'if I was') for hypotheticals.`,
                 day: 11,
                 title: "Active vs Passive Voice",
                 topic: "Clarity in Business Writing",
-                content: `Active voice: Subject does the action (clearer, stronger)
-Passive voice: Subject receives the action (vague, weaker)
+                content: `Active voice: Subject does the action (clearer, stronger, more direct)
+Passive voice: Subject receives the action (often vague, wordy, and evasive)
 
-Use active voice in business writing. It's clearer and more direct.
+Structure comparison:
+- Active: [Subject] + [verb] + [object] → "The board approved the proposal."
+- Passive: [Object] + [be verb] + [past participle] → "The proposal was approved by the board."
 
-Passive is acceptable when the actor is unknown or irrelevant.`,
+Active voice is preferred in business writing because it:
+1. Identifies who is responsible for an action
+2. Uses fewer words
+3. Is easier to read and understand
+
+How to spot passive voice: Look for a form of "to be" (is, was, were, been, being) followed by a past participle (-ed or -en verb). "The report was reviewed." — passive. "We reviewed the report." — active.
+
+When passive voice is acceptable:
+- When the actor is genuinely unknown: "The server was hacked."
+- When the actor is irrelevant: "The contract was signed in 1992."
+- When you deliberately want to avoid assigning blame (though this can seem evasive)
+- In scientific or technical writing, where the method matters more than who did it
+
+A common misuse: "Mistakes were made" (classic evasion — who made them?). Own the action: "We made mistakes."`,
                 examples: [
-                    { text: "The team completed the audit.", note: "(active, clear)", correct: true },
-                    { text: "The audit was completed.", note: "(passive, vague)", correct: false },
-                    { text: "We increased revenue by 15%.", note: "(active)", correct: true },
-                    { text: "Revenue was increased by 15%.", note: "(passive)", correct: false }
+                    { text: "The team completed the audit ahead of schedule.", note: "(active — clear, direct, shows who did it)", correct: true },
+                    { text: "The audit was completed ahead of schedule.", note: "(passive — vague, who completed it?)", correct: false },
+                    { text: "We increased revenue by 15% last quarter.", note: "(active — we did the action)", correct: true },
+                    { text: "Revenue was increased by 15% last quarter.", note: "(passive — wordy, avoids ownership)", correct: false },
+                    { text: "The CEO approved the new budget.", note: "(active — subject, verb, object)", correct: true },
+                    { text: "The server was compromised during the outage.", note: "(passive acceptable — actor unknown)", correct: true }
                 ],
                 questions: [
                     {
@@ -767,18 +898,32 @@ Passive is acceptable when the actor is unknown or irrelevant.`,
                 day: 12,
                 title: "Concision: Cutting Filler",
                 topic: "Eliminating Wordiness",
-                content: `Remove these common filler phrases:
+                content: `Remove common filler phrases that add words without adding meaning:
+
+Common replacements:
 - 'In order to' → 'to'
 - 'Due to the fact that' → 'because'
 - 'At this point in time' → 'now'
 - 'For the purpose of' → 'to'
 - 'In the event that' → 'if'
+- 'With regard to' → 'about' or 'regarding'
+- 'In spite of the fact that' → 'although'
+- 'Has the ability to' → 'can'
+- 'Is in a position to' → 'can'
+- 'On a daily basis' → 'daily'
 
-Business writing should be direct. Every word should work.`,
+The principle: every word should earn its place. If removing a word or phrase doesn't change the meaning, cut it.
+
+Business writing suffers from a culture of padding — writers add filler to sound more thorough or formal. In reality, concise writing signals confidence and clarity. Long-winded writing suggests unclear thinking.
+
+Test your sentences: After drafting, read each sentence and ask, "Is every word necessary?" Challenge every modifier, every prepositional phrase, every introductory clause.`,
                 examples: [
-                    { text: "We need to optimize performance.", note: "(not 'in order to optimize')", correct: true },
-                    { text: "The project failed because of budget cuts.", note: "(not 'due to the fact that')", correct: true },
-                    { text: "We must decide now.", note: "(not 'at this point in time')", correct: true }
+                    { text: "We need to optimize performance.", note: "(not 'in order to optimize performance')", correct: true },
+                    { text: "The project failed because of budget cuts.", note: "(not 'due to the fact that there were budget cuts')", correct: true },
+                    { text: "We must decide now.", note: "(not 'at this point in time, we must make a decision')", correct: true },
+                    { text: "She can approve requests.", note: "(not 'she has the ability to approve requests')", correct: true },
+                    { text: "If the plan fails, we pivot.", note: "(not 'in the event that the plan fails, we will pivot')", correct: true },
+                    { text: "Regarding the merger, here are three concerns.", note: "(not 'with regard to the matter of the merger')", correct: true }
                 ],
                 questions: [
                     {
@@ -823,16 +968,30 @@ Business writing should be direct. Every word should work.`,
                 day: 13,
                 title: "Parallel Structure",
                 topic: "Consistency in Lists and Series",
-                content: `Items in a list must have the same grammatical structure.
+                content: `Items in a list must have the same grammatical structure — this is called parallel structure (or parallelism).
 
-If you start with verbs, use verbs. If you start with nouns, use nouns.
+If you start with verbs, use verbs throughout. If you start with nouns, use nouns. If you start with gerunds (-ing forms), keep going with gerunds. Mixing structures within a list creates jarring, unprofessional writing.
 
-This applies to bullet points, series in sentences, and comparisons.`,
+Forms that must match:
+- Nouns: "We value quality, speed, and innovation." (not "quality, speed, and being innovative")
+- Infinitives: "We aim to hire, to train, and to retain talent."
+- Gerunds: "We focus on hiring, training, and retaining talent."
+- Past-tense verbs: "She analyzed the data, reviewed the results, and submitted her report."
+- Adjectives: "The candidate is skilled, motivated, and reliable." (not "skilled, motivated, and has reliability")
+
+Parallel structure is especially important in:
+1. Bullet-point lists in reports and presentations
+2. Job descriptions and resume bullet points
+3. Comparisons: "X is more Y than Z" structures
+
+Error pattern to watch for: mixing an infinitive ("to X") with gerunds ("X-ing") in the same list. Pick one and stick with it.`,
                 examples: [
-                    { text: "We need to hire, train, and retain talent.", note: "(all verbs)", correct: true },
+                    { text: "We need to hire, train, and retain talent.", note: "(all infinitives: to hire, to train, to retain)", correct: true },
                     { text: "Our goals: growth, efficiency, innovation.", note: "(all nouns)", correct: true },
-                    { text: "She likes coding, testing, and to deploy.", note: "(inconsistent)", correct: false },
-                    { text: "She likes coding, testing, and deploying.", note: "(all gerunds)", correct: true }
+                    { text: "She likes coding, testing, and to deploy.", note: "(inconsistent — gerunds then infinitive)", correct: false },
+                    { text: "She likes coding, testing, and deploying.", note: "(all gerunds — consistent)", correct: true },
+                    { text: "The report is accurate, comprehensive, and it covers all key risks.", note: "(inconsistent — adjectives then clause)", correct: false },
+                    { text: "The report is accurate, comprehensive, and thorough.", note: "(all adjectives — consistent)", correct: true }
                 ],
                 questions: [
                     {
@@ -877,17 +1036,33 @@ This applies to bullet points, series in sentences, and comparisons.`,
                 day: 14,
                 title: "Dangling Modifiers",
                 topic: "Matching Subjects to Modifiers",
-                content: `A modifier at the start of a sentence must describe the subject that immediately follows.
+                content: `A modifier at the start of a sentence must logically connect to the subject that immediately follows it. If they don't match, the modifier "dangles."
 
 Wrong: "After reviewing the data, the decision was made."
-(The decision didn't review the data)
+The decision didn't review the data — we did.
 
 Right: "After reviewing the data, we made the decision."
-(We reviewed the data)`,
+Now we reviewed the data, and we made the decision. They match.
+
+Dangling modifiers happen most often when:
+1. You use passive voice after an introductory phrase ("the report was filed" instead of "we filed the report")
+2. You use a participial phrase (-ing or -ed) that doesn't match the actual subject
+
+The fix is almost always to:
+- Change the main clause to use an active subject ("we," "the team," "she," etc.)
+- Or rewrite the introductory phrase as a full clause ("After we reviewed the data,...")
+
+More examples of the error:
+- "Exhausted by the meeting, the decision was postponed." (The decision wasn't exhausted — we were.)
+- "To meet the deadline, the report needs to be submitted." (The report isn't trying to meet the deadline — you are.)
+- "Having read the contract, several concerns emerged." (Concerns didn't read it — I did.)`,
                 examples: [
-                    { text: "Walking into the office, I saw the report.", note: "(I was walking)", correct: true },
-                    { text: "Walking into the office, the report was visible.", note: "(report wasn't walking)", correct: false },
-                    { text: "To improve results, we tested new strategies.", note: "(we are improving)", correct: true }
+                    { text: "Walking into the office, I saw the report on my desk.", note: "(I was walking — modifier matches subject 'I')", correct: true },
+                    { text: "Walking into the office, the report was visible.", note: "(incorrect — the report wasn't walking)", correct: false },
+                    { text: "To improve results, we tested new strategies.", note: "(we are trying to improve — modifier matches 'we')", correct: true },
+                    { text: "After reviewing the budget, the cuts were approved.", note: "(incorrect — the cuts didn't review the budget)", correct: false },
+                    { text: "After reviewing the budget, the team approved the cuts.", note: "(correct — the team reviewed and approved)", correct: true },
+                    { text: "Exhausted after the conference, the presentation was rescheduled.", note: "(incorrect — the presentation wasn't exhausted)", correct: false }
                 ],
                 questions: [
                     {
@@ -932,20 +1107,30 @@ Right: "After reviewing the data, we made the decision."
                 day: 15,
                 title: "Comma Rules: Introductory Phrases",
                 topic: "When to Use Commas",
-                content: `Use a comma after introductory phrases longer than 3-4 words.
+                content: `Use a comma after introductory phrases and clauses. This is one of the most consistent and important comma rules in business writing.
 
-Introductory phrases include:
-- Time: "Last quarter,"
-- Condition: "If we succeed,"
-- Transition: "However,"
-- Dependent clause: "When the market shifts,"
+Types of introductory elements that need commas:
 
-Short ones (1-2 words) usually don't need commas.`,
+1. Transitional words and phrases: However, Therefore, Moreover, Nevertheless, In addition, As a result, On the other hand — always use a comma after these.
+
+2. Prepositional phrases (3+ words): "After the meeting," / "During the review," / "In light of the findings,"
+
+3. Conditional clauses: "If we proceed," / "Unless the board approves," / "Provided that costs are controlled,"
+
+4. Time clauses: "When the quarter ends," / "Before the deadline arrives," / "As soon as the data is ready,"
+
+5. Participial phrases: "Having reviewed the contract," / "Considering the risks,"
+
+Short introductory words (1-2 words) can skip the comma: "Today we launch." / "Tomorrow she presents." However, adding a comma after even these is never wrong and often improves clarity.
+
+The comma signals to the reader: "The setup is done; now here comes the main point."`,
                 examples: [
-                    { text: "After the meeting, we reviewed the notes.", note: "(introductory phrase)", correct: true },
-                    { text: "However, the results exceeded expectations.", note: "(transitional word)", correct: true },
-                    { text: "Yesterday we launched the product.", note: "(short, no comma needed)", correct: true },
-                    { text: "If the budget allows, we'll expand the team.", note: "(conditional clause)", correct: true }
+                    { text: "After the meeting, we reviewed the notes.", note: "(prepositional phrase — comma required)", correct: true },
+                    { text: "However, the results exceeded expectations.", note: "(transitional word — comma required)", correct: true },
+                    { text: "Yesterday we launched the product.", note: "(short intro — comma optional, both acceptable)", correct: true },
+                    { text: "If the budget allows, we will expand the team.", note: "(conditional clause — comma required)", correct: true },
+                    { text: "As a result of the merger, three departments were restructured.", note: "(transitional phrase — comma required)", correct: true },
+                    { text: "Having reviewed all the options we recommend Option B.", note: "(participial phrase missing comma)", correct: false }
                 ],
                 questions: [
                     {
@@ -990,16 +1175,31 @@ Short ones (1-2 words) usually don't need commas.`,
                 day: 16,
                 title: "Comma Rules: Independent Clauses",
                 topic: "Joining Complete Sentences",
-                content: `When joining two complete sentences with a conjunction (and, but, or, so), use a comma before the conjunction.
+                content: `When joining two independent clauses (complete sentences) with a coordinating conjunction, place a comma before the conjunction.
 
-Without a conjunction, use a semicolon or period, not a comma (that's a comma splice).
+The seven coordinating conjunctions (FANBOYS): For, And, Nor, But, Or, Yet, So
 
-Test: Can both parts stand alone? If yes, you need proper punctuation.`,
+Formula: [Independent Clause], [conjunction] [Independent Clause]
+
+Example: "Revenue increased, and costs decreased."
+
+The test — can both parts stand alone as complete sentences?
+- "Revenue increased." — yes, complete sentence
+- "Costs decreased." — yes, complete sentence
+Therefore: use a comma before "and."
+
+Important distinction: Don't add a comma just because you see a conjunction. Only use the comma when both sides are full, independent clauses.
+- "She reviewed the report and submitted it." — NO comma ("submitted it" has no subject — not a full sentence)
+- "She reviewed the report, and she submitted it." — YES comma (both sides are complete)
+
+Without a conjunction between two independent clauses, use a semicolon or period — never a comma alone (that's a comma splice, covered in Day 3).`,
                 examples: [
-                    { text: "Revenue increased, and costs decreased.", note: "(two complete thoughts)", correct: true },
-                    { text: "Revenue increased and costs decreased.", note: "(missing comma)", correct: false },
-                    { text: "Revenue increased; costs decreased.", note: "(semicolon works too)", correct: true },
-                    { text: "Revenue increased, costs decreased.", note: "(comma splice, wrong)", correct: false }
+                    { text: "Revenue increased, and costs decreased.", note: "(two independent clauses — comma before 'and')", correct: true },
+                    { text: "Revenue increased and costs decreased.", note: "(missing comma — two full sentences need separation)", correct: false },
+                    { text: "Revenue increased; costs decreased.", note: "(semicolon is also correct)", correct: true },
+                    { text: "Revenue increased, costs decreased.", note: "(comma splice — wrong)", correct: false },
+                    { text: "The team worked late, but the deadline was still missed.", note: "(two full clauses — comma before 'but')", correct: true },
+                    { text: "She drafted the proposal and sent it to the board.", note: "(no comma — 'sent it' lacks its own subject)", correct: true }
                 ],
                 questions: [
                     {
@@ -1044,15 +1244,31 @@ Test: Can both parts stand alone? If yes, you need proper punctuation.`,
                 day: 17,
                 title: "Semicolon Usage",
                 topic: "Linking Related Ideas",
-                content: `Use semicolons to:
-1. Join two related independent clauses (instead of a period)
-2. Separate complex list items that contain commas
+                content: `Use semicolons for two distinct purposes in business writing:
 
-Don't use semicolons before conjunctions (and, but, or) unless the clauses have internal commas.`,
+PURPOSE 1 — Join two closely related independent clauses (instead of a period):
+The semicolon says "these two ideas are so closely related, they belong in the same sentence." Use it when a period would create too abrupt a break, but a comma would create a comma splice.
+
+Example: "Revenue grew 20%; margins improved 5%."
+Both parts are complete sentences. A semicolon connects them and signals that the second point follows directly from the first.
+
+PURPOSE 2 — Separate complex list items that contain internal commas:
+When list items already have commas inside them, use semicolons between items to prevent confusion about what goes with what.
+
+Example: "We hired a CFO, based in Seattle; a VP of Sales, based in London; and a Head of Operations, based in Austin."
+Without semicolons, the reader can't tell where one item ends and the next begins.
+
+RULES:
+- Do NOT use a semicolon before a coordinating conjunction (and, but, or): "Revenue grew; and margins improved" is wrong. Use a comma instead: "Revenue grew, and margins improved."
+- Both sides of a semicolon must be independent clauses. You can't write "Revenue grew; significantly." — that's wrong because "significantly" isn't a full sentence.
+- Semicolons are more formal than periods. Use them sparingly and purposefully.`,
                 examples: [
-                    { text: "Revenue grew 20%; margins improved 5%.", note: "(related ideas)", correct: true },
-                    { text: "We hired three roles: CFO, Seattle; VP Sales, London; Head of Ops, Austin.", note: "(complex list)", correct: true },
-                    { text: "Revenue grew; and margins improved.", note: "(don't use with 'and')", correct: false }
+                    { text: "Revenue grew 20%; margins improved 5%.", note: "(two related independent clauses)", correct: true },
+                    { text: "We hired three roles: CFO, Seattle; VP Sales, London; Head of Ops, Austin.", note: "(complex list — semicolons separate items with internal commas)", correct: true },
+                    { text: "Revenue grew; and margins improved.", note: "(incorrect — don't use semicolon before 'and')", correct: false },
+                    { text: "The product launched on time; customer response was immediate.", note: "(two closely related independent clauses)", correct: true },
+                    { text: "The team struggled; however, they delivered.", note: ("(semicolon before transitional 'however' is correct)"), correct: true },
+                    { text: "We need more data; to make the decision.", note: "(incorrect — second part is not an independent clause)", correct: false }
                 ],
                 questions: [
                     {
@@ -1089,14 +1305,33 @@ Don't use semicolons before conjunctions (and, but, or) unless the clauses have 
                 day: 18,
                 title: "Restrictive Clauses",
                 topic: "Essential vs Non-essential Information",
-                content: `Restrictive (essential) clauses define which thing you're talking about. No commas.
-Non-restrictive (extra info) clauses add detail. Use commas.
+                content: `Restrictive (essential) clauses define which specific thing you're talking about. No commas.
+Non-restrictive (extra info) clauses add detail about something already identified. Use commas.
 
-Test: If removing the clause changes which thing you mean, it's restrictive (no commas).`,
+The distinction matters more than just grammar — it changes meaning.
+
+RESTRICTIVE (no commas):
+"The employees who completed training received bonuses."
+This means: Only the ones who completed training received bonuses. Other employees did not. The clause restricts which employees we're talking about — it's essential.
+
+NON-RESTRICTIVE (with commas):
+"The employees, who completed training last year, received bonuses."
+This implies: All employees (who happen to have completed training) received bonuses. The clause is parenthetical — extra information.
+
+The test: Remove the clause. Does the sentence still refer to the same group/thing?
+- "The employees received bonuses." — Could mean any employees → the removed clause was essential (restrictive, no commas)
+- "The CEO received bonuses." — Still refers to one specific CEO → the removed clause was extra (non-restrictive, use commas)
+
+Rule of thumb: Use commas when there's only one of the thing being described (e.g., "the CEO," "our Q4 strategy," "my manager"). No commas when narrowing down from a group.
+
+This lesson builds on Day 2 (that vs which). Restrictive clauses often use "that"; non-restrictive use "which" (with commas).`,
                 examples: [
-                    { text: "Employees who miss training will be contacted.", note: "(only those who miss)", correct: true },
-                    { text: "Our CFO, who joined in 2020, led the audit.", note: "(extra info)", correct: true },
-                    { text: "The report that I sent yesterday was approved.", note: "(specifies which report)", correct: true }
+                    { text: "Employees who miss training will be contacted.", note: "(restrictive — only those who miss, no commas)", correct: true },
+                    { text: "Our CFO, who joined in 2020, led the audit.", note: "(non-restrictive — extra info about one specific CFO, commas required)", correct: true },
+                    { text: "The report that I sent yesterday was approved.", note: "(restrictive — specifies which report, no commas)", correct: true },
+                    { text: "The Q4 strategy, which we revised last week, launches Monday.", note: "(non-restrictive — adds when, but the strategy is already identified)", correct: true },
+                    { text: "Clients, who have signed contracts, receive priority support.", note: "(incorrect — implies all clients have signed; should be no commas to restrict)", correct: false },
+                    { text: "Clients who have signed contracts receive priority support.", note: "(restrictive — specifies which clients, no commas)", correct: true }
                 ],
                 questions: [
                     {
@@ -1141,18 +1376,33 @@ Test: If removing the clause changes which thing you mean, it's restrictive (no 
                 day: 19,
                 title: "Apostrophe Rules",
                 topic: "Possession and Contractions",
-                content: `Apostrophes show:
-1. Possession: The company's revenue (singular), the companies' revenue (plural)
-2. Contractions: don't, can't, it's (avoid in formal writing)
+                content: `Apostrophes serve two purposes: showing possession and marking contractions. They are never used to form plurals.
 
-Never use apostrophes for plurals.
+POSSESSION:
+- Singular noun → add 's: "the CEO's report," "the company's policy," "the client's contract"
+- Plural noun ending in s → add ' only: "the managers' decision," "the employees' handbook," "the clients' accounts"
+- Plural noun NOT ending in s → add 's: "the children's program," "the people's choice"
+- Proper names ending in s: Both "James's office" and "James' office" are accepted; be consistent.
 
-Its vs it's: 'its' = possessive, 'it's' = it is`,
+CONTRACTIONS (avoid in formal business writing):
+don't → do not | can't → cannot | it's → it is | they're → they are
+won't → will not | I've → I have | we'll → we will
+
+In reports, proposals, presentations, and formal emails: write out the full form. Contractions are acceptable in casual internal messages and direct communication.
+
+NEVER use apostrophes for plurals:
+- Wrong: "We have three option's." → Right: "We have three options."
+- Wrong: "The CEO's and CFO's approved it." (if you mean both people as subjects) → Right: "The CEOs and CFOs approved it."
+- Wrong: "The 1990's were transformative." → Right: "The 1990s were transformative."
+
+The "grocers' apostrophe" (apple's for sale) is a common error. Plurals just need an 's' — no apostrophe.`,
                 examples: [
-                    { text: "The CEO's decision was final.", note: "(singular possession)", correct: true },
-                    { text: "The investors' concerns were addressed.", note: "(plural possession)", correct: true },
-                    { text: "The 1990s saw rapid growth.", note: "(plural, no apostrophe)", correct: true },
-                    { text: "Don't send that email.", note: "(contraction, informal)", correct: true }
+                    { text: "The CEO's decision was final.", note: "(singular possession — one CEO)", correct: true },
+                    { text: "The investors' concerns were addressed.", note: "(plural possession — multiple investors)", correct: true },
+                    { text: "The 1990s saw rapid growth.", note: "(plural decade — no apostrophe)", correct: true },
+                    { text: "Do not send that email.", note: "(formal writing — no contraction)", correct: true },
+                    { text: "The company's strategy and its competitors' strategies differ.", note: "(singular and plural possessives used correctly)", correct: true },
+                    { text: "The team's result's were impressive.", note: "(incorrect — 'results' is a plural, not possessive)", correct: false }
                 ],
                 questions: [
                     {
@@ -1199,21 +1449,36 @@ Its vs it's: 'its' = possessive, 'it's' = it is`,
                 day: 20,
                 title: "Nominalization",
                 topic: "Turning Verbs into Nouns (and Why Not To)",
-                content: `Nominalization turns verbs into nouns. It makes writing weaker and wordier.
+                content: `Nominalization is the process of turning an action word (verb) into a thing word (noun). It makes writing weaker, longer, and harder to read.
 
 Weak: "We conducted an analysis of the data."
 Strong: "We analyzed the data."
 
-Common nominalizations to avoid:
+Nominalizations often appear as -tion, -ment, -ance, -ence, or -ity endings bolted onto verbs.
+
+Common nominalizations to eliminate:
+Nominalized phrase → Strong verb
 - make a decision → decide
 - conduct an investigation → investigate
 - provide assistance → assist
-- give consideration to → consider`,
+- give consideration to → consider
+- make an improvement → improve
+- come to an agreement → agree
+- perform an assessment → assess
+- provide a recommendation → recommend
+- offer an explanation → explain
+- undertake a review → review
+
+Why does this matter? Nominalization forces you to add extra words: you need "conduct," "make," "provide," or "give" as the actual verb, plus the nominalized noun, plus prepositions to connect them. Cutting the nominalization removes the scaffolding and gets to the point faster.
+
+In corporate writing, nominalizations are endemic. They sound bureaucratic and important — but they actually slow down the reader and obscure responsibility.`,
                 examples: [
-                    { text: "We analyzed the data.", note: "(verb form, strong)", correct: true },
-                    { text: "We conducted an analysis of the data.", note: "(nominalized, weak)", correct: false },
-                    { text: "We decided to pivot.", note: "(strong)", correct: true },
-                    { text: "We made a decision to pivot.", note: "(nominalized)", correct: false }
+                    { text: "We analyzed the data.", note: "(strong verb — direct and concise)", correct: true },
+                    { text: "We conducted an analysis of the data.", note: "(nominalized — 'analysis' is the noun form of 'analyze')", correct: false },
+                    { text: "We decided to pivot.", note: "(strong verb 'decided')", correct: true },
+                    { text: "We made a decision to pivot.", note: "(nominalized — 'decision' replaces the verb 'decide')", correct: false },
+                    { text: "The team assessed the risks before proceeding.", note: "(strong verb 'assessed')", correct: true },
+                    { text: "The team performed an assessment of the risks before proceeding.", note: "(nominalized — wordier and weaker)", correct: false }
                 ],
                 questions: [
                     {
@@ -1258,20 +1523,41 @@ Common nominalizations to avoid:
                 day: 21,
                 title: "Colon Usage",
                 topic: "Introducing Lists and Explanations",
-                content: `Use colons to introduce:
-1. Lists or series
-2. Explanations or elaborations
-3. Quotes (in formal writing)
+                content: `Colons introduce what comes next — a list, an explanation, a quotation, or an elaboration. Think of the colon as saying "here it comes" or "specifically."
 
-Rule: What comes before the colon must be a complete sentence.
+THREE MAIN USES:
 
-Wrong: "We need: strategy, execution, results."
-Right: "We need three things: strategy, execution, results."`,
+1. Introducing a list or series:
+"We need three things: strategy, execution, and results."
+The colon signals that the list is about to follow.
+
+2. Introducing an explanation or clarification:
+"The result was surprising: revenue grew while headcount declined."
+The second clause explains or amplifies the first.
+
+3. Introducing a formal quotation:
+"The CEO stated: 'Growth is our only priority.'"
+
+THE GOLDEN RULE: What comes before the colon must be a grammatically complete sentence (independent clause).
+
+Wrong: "We need: strategy, execution, results." (incomplete before colon)
+Right: "We need three things: strategy, execution, results." (complete before colon)
+
+Wrong: "The areas requiring improvement are: communication, planning, and follow-through."
+Right: "Three areas require improvement: communication, planning, and follow-through."
+
+The error pattern: Do not place a colon immediately after a linking verb (is, are, include, such as). These verbs connect naturally to what follows without a colon.
+- Wrong: "The team members are: Alex, Sam, and Chris."
+- Right: "The team members are Alex, Sam, and Chris."
+
+Capitalization: After a colon, capitalize only if what follows is a complete sentence or a proper noun.`,
                 examples: [
-                    { text: "We identified three risks: budget, timeline, scope.", note: "(introduces list)", correct: true },
-                    { text: "The issue is clear: we lack resources.", note: "(introduces explanation)", correct: true },
-                    { text: "Remember this: quality over speed.", note: "(introduces elaboration)", correct: true },
-                    { text: "Attendees include: Sarah, Mike, Lisa.", note: "(incomplete before colon)", correct: false }
+                    { text: "We identified three risks: budget overrun, timeline slippage, and scope creep.", note: "(complete clause before colon — correct)", correct: true },
+                    { text: "The issue is clear: we lack the resources to meet this deadline.", note: "(colon introduces explanation of the issue)", correct: true },
+                    { text: "Remember this principle: quality always outperforms speed.", note: "(colon introduces the elaboration)", correct: true },
+                    { text: "Attendees include: Sarah, Mike, and Lisa.", note: "(incorrect — 'include' is a verb; no colon needed here)", correct: false },
+                    { text: "One factor drives retention: employee recognition.", note: "(complete sentence before colon — correct)", correct: true },
+                    { text: "The three pillars of success are: hard work, smart strategy, and strong execution.", note: "(incorrect — 'are' shouldn't be followed by a colon)", correct: false }
                 ],
                 questions: [
                     {
@@ -1316,18 +1602,39 @@ Right: "We need three things: strategy, execution, results."`,
                 day: 22,
                 title: "Hyphens in Compound Modifiers",
                 topic: "When to Hyphenate",
-                content: `Use hyphens in compound modifiers (two words acting as one adjective) that come before a noun.
+                content: `A compound modifier is two or more words that work together as a single adjective before a noun. Use a hyphen to show they function as one unit.
 
-Hyphenate: "long-term strategy" (before noun)
-Don't hyphenate: "the strategy is long term" (after noun)
-Don't hyphenate: words ending in -ly (naturally occurring)
+HYPHENATE when compound modifier comes BEFORE the noun:
+- long-term strategy (long-term modifies strategy)
+- high-quality product (high-quality modifies product)
+- well-known leader (well-known modifies leader)
+- data-driven decision (data-driven modifies decision)
+- full-time employee (full-time modifies employee)
+- up-to-date information (up-to-date modifies information)
 
-Examples: high-quality product, well-known fact, decision-making process`,
+NO HYPHEN when the modifier comes AFTER the noun (predicate position):
+- "The strategy is long term."
+- "The product is high quality."
+- "The leader is well known."
+- "The decision was data driven."
+
+NO HYPHEN with -ly adverbs (they already signal modification):
+- "a rapidly growing market" (not rapidly-growing)
+- "a highly effective strategy" (not highly-effective)
+- "a clearly defined goal" (not clearly-defined)
+
+NO HYPHEN when modifiers are so established they've become one word:
+- "email marketing" (not e-mail marketing, though both appear)
+- "healthcare provider" (standard compound)
+
+Watch for: number + noun compounds before nouns: "five-year plan," "10-page report," "three-month timeline" — always hyphenate these.`,
                 examples: [
-                    { text: "We need a long-term solution.", note: "(before noun)", correct: true },
-                    { text: "The solution is long term.", note: "(after noun, no hyphen)", correct: true },
-                    { text: "This is a highly competitive market.", note: "(-ly word, no hyphen)", correct: true },
-                    { text: "We improved decision-making processes.", note: "(compound modifier)", correct: true }
+                    { text: "We need a long-term solution to the problem.", note: "(before noun — hyphen required)", correct: true },
+                    { text: "The solution is long term.", note: "(after noun — no hyphen needed)", correct: true },
+                    { text: "This is a highly competitive market.", note: "(-ly adverb — no hyphen ever)", correct: true },
+                    { text: "We need a data-driven approach to marketing.", note: "(compound modifier before noun — hyphen required)", correct: true },
+                    { text: "She submitted a 50-page report.", note: "(number + noun before another noun — hyphenate)", correct: true },
+                    { text: "She submitted a rapidly-growing forecast.", note: "(incorrect — -ly adverbs don't take hyphens)", correct: false }
                 ],
                 questions: [
                     {
@@ -1372,18 +1679,35 @@ Examples: high-quality product, well-known fact, decision-making process`,
                 day: 23,
                 title: "Verb Tense Consistency",
                 topic: "Maintaining Timeline Clarity",
-                content: `Stay in one tense unless the timeline actually changes.
+                content: `Stay in one tense unless the timeline genuinely changes. Tense shifts within a passage confuse the reader by suggesting that different events happened at different times when they actually didn't.
 
 Wrong: "We tested the feature and it fails."
+Both events are in the past — "tested" and "failed" should match.
 Right: "We tested the feature and it failed."
 
-Also right: "We tested the feature and it still fails." (different timelines)
+Acceptable tense shift — when the timeline actually changes:
+"We launched the product last month, and it continues to perform well."
+(launched = completed past action; continues = ongoing present state)
+"We tested the prototype, but the issue still persists."
+(tested = past; persists = still true now — intentional shift)
 
-Business writing typically uses present or past tense. Stay consistent within paragraphs.`,
+Common business writing tenses:
+- Past tense for completed events: "Sales increased by 12% in Q3."
+- Present tense for current truths: "The market shows strong growth potential."
+- Future tense for plans: "We will expand into three new markets."
+
+Tip: Choose a primary tense for each section of a document and commit to it. Shift only when you genuinely move to a different time frame.
+
+Watch for: narrating past events and then slipping into present for commentary — a very common error in case studies and reports.
+Wrong: "The team launched the campaign in March. Sales jump immediately."
+Right: "The team launched the campaign in March. Sales jumped immediately."`,
                 examples: [
-                    { text: "We launched in Q3 and saw immediate results.", note: "(both past)", correct: true },
-                    { text: "We launched in Q3 and see immediate results.", note: "(inconsistent)", correct: false },
-                    { text: "We tested thoroughly, but the bug persists.", note: "(timeline shift is intentional)", correct: true }
+                    { text: "We launched in Q3 and saw immediate results.", note: "(both past — consistent)", correct: true },
+                    { text: "We launched in Q3 and see immediate results.", note: "(inconsistent — 'see' breaks the past timeline)", correct: false },
+                    { text: "We tested thoroughly, but the bug persists.", note: "(intentional shift — past test, present ongoing issue)", correct: true },
+                    { text: "The report was submitted on Monday and receives positive feedback.", note: "(inconsistent — 'receives' should be 'received')", correct: false },
+                    { text: "The team analyzed the data and presented findings to the board.", note: "(both past — consistent)", correct: true },
+                    { text: "The system was upgraded last quarter and now runs significantly faster.", note: "(intentional shift — past upgrade, present result)", correct: true }
                 ],
                 questions: [
                     {
@@ -1428,20 +1752,38 @@ Business writing typically uses present or past tense. Stay consistent within pa
                 day: 24,
                 title: "Subject-Verb Agreement",
                 topic: "Matching Number",
-                content: `Singular subjects take singular verbs. Plural subjects take plural verbs.
+                content: `Singular subjects take singular verbs. Plural subjects take plural verbs. This sounds simple, but several patterns make it tricky.
 
-Tricky cases:
-- "The team" is singular (the team decides, not decide)
-- "Data" can be singular or plural (both are acceptable now)
-- Intervening phrases don't change the subject
+TRICKY CASE 1 — Collective nouns (team, board, committee, staff):
+In American English, these are singular. "The team decides," not "the team decide."
 
-"The CEO, along with the board, decides." (singular)
-"The CEO and the board decide." (plural)`,
+TRICKY CASE 2 — Intervening phrases don't change the subject:
+"The CEO, along with the board, decides."
+The subject is still "CEO" (singular). "Along with the board" is a parenthetical phrase that doesn't change the verb.
+Compare: "The CEO and the board decide." (both are joined by 'and' — now plural)
+
+TRICKY CASE 3 — 'Each,' 'every,' 'either,' 'neither' are singular:
+"Each of the proposals requires review." (not require)
+"Neither option works." (not work)
+
+TRICKY CASE 4 — Neither...nor / Either...or:
+The verb agrees with the subject closest to it.
+"Neither the managers nor the CEO wants to proceed." (CEO is closest — singular)
+"Neither the CEO nor the managers want to proceed." (managers is closest — plural)
+
+TRICKY CASE 5 — 'Data,' 'criteria,' 'media,' 'phenomena':
+These are technically plural (singular: datum, criterion, medium, phenomenon), but 'data' is increasingly accepted as singular in business contexts. 'Criteria' and 'phenomena' remain clearly plural in formal writing.
+
+TRICKY CASE 6 — Percentages and portions:
+"Fifty percent of the budget is committed." (budget is singular)
+"Fifty percent of the employees are satisfied." (employees is plural)`,
                 examples: [
-                    { text: "The team decides strategy.", note: "(team is singular)", correct: true },
-                    { text: "The team members decide strategy.", note: "(members is plural)", correct: true },
-                    { text: "The data shows clear trends.", note: "(data as singular, acceptable)", correct: true },
-                    { text: "The data show clear trends.", note: "(data as plural, also acceptable)", correct: true }
+                    { text: "The team decides strategy each quarter.", note: "(collective noun — singular in American English)", correct: true },
+                    { text: "The team members decide strategy each quarter.", note: "('members' is the plural subject)", correct: true },
+                    { text: "The CEO, along with the directors, approves the budget.", note: "(subject is 'CEO' — singular; 'along with' is parenthetical)", correct: true },
+                    { text: "Each of the proposals requires separate review.", note: "('each' is singular — use 'requires')", correct: true },
+                    { text: "Neither the plan nor the timelines are realistic.", note: "('timelines' is closest subject — plural 'are' is correct)", correct: true },
+                    { text: "The committee have reached a decision.", note: "(incorrect in American English — 'committee' is singular, use 'has')", correct: false }
                 ],
                 questions: [
                     {
@@ -1486,19 +1828,34 @@ Tricky cases:
                 day: 25,
                 title: "Preposition Usage",
                 topic: "Common Prepositional Errors",
-                content: `Different from (not different than)
-Comply with (not comply to)
-Identical to (not identical with)
-Independent of (not independent from)
+                content: `Prepositions are the small words that show relationships between parts of a sentence (in, on, at, with, from, by, of, to). Many are idiomatic — meaning their usage is fixed by convention, not logic. You simply have to learn which prepositions pair with which words.
 
-Prepositions are often idiomatic. When unsure, check usage examples.
+KEY PAIRS TO MEMORIZE:
+- Different from (not "different than" in formal writing)
+- Comply with (not "comply to")
+- Identical to (not "identical with")
+- Independent of (not "independent from")
+- Consist of (not "consist in" or "consist with")
+- Responsible for (not "responsible of")
+- Agree with a person, agree to a proposal, agree on terms
+- Argue with a person, argue about/over a topic
+- Compare to (note similarity), compare with (examine differences)
+- Contrast with (not "contrast to")
+- Equivalent to (not "equivalent with")
+- Comply with (regulations, rules, standards)
+- Interfere with (not "interfere in" unless used idiomatically)
 
-Ending sentences with prepositions is fine in modern English, despite old rules.`,
+THE PREPOSITION AT THE END OF A SENTENCE:
+The old rule against ending sentences with prepositions is a myth that was never a genuine rule of English grammar. "This is something we need to think about" is perfectly correct. The stilted "This is something about which we need to think" is grammatically correct but needlessly formal. Use your judgment — in formal writing, restructure if easy; don't if it sounds unnatural.
+
+When unsure about a preposition pair, look it up. Idioms must be memorized.`,
                 examples: [
-                    { text: "This approach is different from the last one.", note: "(different from)", correct: true },
-                    { text: "We must comply with regulations.", note: "(comply with)", correct: true },
-                    { text: "The results are identical to last year's.", note: "(identical to)", correct: true },
-                    { text: "The decision is independent of cost.", note: "(independent of)", correct: true }
+                    { text: "This approach is different from the last one we tried.", note: "('different from' — standard in formal English)", correct: true },
+                    { text: "We must comply with all applicable regulations.", note: "('comply with' — the fixed idiomatic pairing)", correct: true },
+                    { text: "The results are identical to last year's figures.", note: "('identical to' — not 'identical with')", correct: true },
+                    { text: "The decision is independent of cost considerations.", note: "('independent of' — not 'independent from')", correct: true },
+                    { text: "The new process is equivalent to the old one in cost.", note: "('equivalent to' — not 'equivalent with')", correct: true },
+                    { text: "Our strategy is different than our competitor's.", note: "(acceptable in speech but 'different from' is preferred in formal writing)", correct: false }
                 ],
                 questions: [
                     {
@@ -1543,19 +1900,35 @@ Ending sentences with prepositions is fine in modern English, despite old rules.
                 day: 26,
                 title: "Redundancy Elimination",
                 topic: "Cutting Duplicate Meaning",
-                content: `Remove redundant phrases:
-- "Past history" → history
-- "Advance planning" → planning
-- "End result" → result
-- "Brief summary" → summary
-- "Completely eliminate" → eliminate
-- "Currently ongoing" → ongoing
+                content: `Redundancy means using two words or phrases that mean the same thing. Remove redundant words — they waste the reader's time and signal careless writing.
 
-Each word should add meaning. If removing it doesn't change the meaning, cut it.`,
+The test: Remove one word. Does the remaining phrase still mean exactly the same thing? If yes, the removed word was redundant.
+
+COMMON REDUNDANT PHRASES TO ELIMINATE:
+- "Past history" → history (history is always past)
+- "Advance planning" → planning (planning is always done in advance)
+- "End result" → result (a result is already an end point)
+- "Brief summary" → summary (summaries are by definition brief)
+- "Completely eliminate" → eliminate (eliminate already means complete removal)
+- "Currently ongoing" → ongoing (ongoing means currently happening)
+- "Future plans" → plans (plans are always future-oriented)
+- "Free gift" → gift (gifts are free by definition)
+- "True fact" → fact (facts are true by definition)
+- "New innovation" → innovation (innovations are new by definition)
+- "Consensus of opinion" → consensus (consensus is already about opinion)
+- "Collaborate together" → collaborate (collaborate means work together)
+- "Revert back" → revert (revert already means go back)
+- "Repeat again" → repeat (repeat already means do again)
+- "Added bonus" → bonus (bonuses are additional by definition)
+
+Redundancy is related to nominalization and filler phrases (Days 12 and 20) — all three reflect the same underlying problem: using more words than necessary.`,
                 examples: [
-                    { text: "We reviewed the company's history.", note: "(not 'past history')", correct: true },
-                    { text: "Planning is essential.", note: "(not 'advance planning')", correct: true },
-                    { text: "The result was positive.", note: "(not 'end result')", correct: true }
+                    { text: "We reviewed the company's history.", note: "('past history' is redundant — history is always past)", correct: true },
+                    { text: "Planning is essential for a successful launch.", note: "('advance planning' is redundant — planning is always advance)", correct: true },
+                    { text: "The result exceeded expectations.", note: "('end result' is redundant — a result is already final)", correct: true },
+                    { text: "The team collaborated on the proposal.", note: "('collaborated together' is redundant — collaborate means work together)", correct: true },
+                    { text: "Please revert to the previous version.", note: "('revert back' is redundant — revert means go back)", correct: true },
+                    { text: "This new innovation will transform the industry.", note: "(redundant — innovations are new by definition; just 'innovation')", correct: false }
                 ],
                 questions: [
                     {
@@ -1600,24 +1973,37 @@ Each word should add meaning. If removing it doesn't change the meaning, cut it.
                 day: 27,
                 title: "Formal vs Informal Register",
                 topic: "Choosing Appropriate Language",
-                content: `Formal business writing:
-- Avoid contractions (don't → do not)
-- Avoid slang and colloquialisms
-- Use precise vocabulary
-- Avoid exclamation points
-- Use complete sentences
+                content: `Register is the level of formality in your writing. Choosing the right register is a professional skill — using informal language in a formal context looks unprofessional, while being overly formal in casual communication sounds stiff and unfriendly.
 
-Informal (emails, chats):
-- Contractions are fine
-- Conversational tone acceptable
-- Fragments acceptable for emphasis
+FORMAL writing (board reports, proposals, legal documents, formal emails, executive memos):
+- No contractions: "do not" not "don't"; "cannot" not "can't"; "it is" not "it's"
+- No slang or colloquialisms: "the initiative declined" not "the project tanked"
+- Precise vocabulary: "we are pleased to announce" not "we're excited to share"
+- No exclamation points: full stops communicate confidence; exclamation marks signal enthusiasm or alarm
+- Complete sentences: avoid fragments
+- Third person or first-person plural: "the company" or "we" rather than "I" in some contexts
+- Measured tone: avoid hyperbole and emotional language
 
-Know your audience and medium.`,
+INFORMAL writing (team chats, internal Slack, casual emails to close colleagues):
+- Contractions are fine and make you sound approachable
+- Conversational vocabulary is appropriate
+- Fragments for emphasis: "Got it." "Sounds good." "Thanks!"
+- Exclamation points acceptable in moderation
+
+CHOOSING REGISTER — ask:
+1. Who is the audience? (executive vs. peer vs. external client)
+2. What is the medium? (formal report vs. email vs. chat)
+3. What is the relationship? (new client vs. long-term partner)
+4. What is the stakes? (high-stakes contract vs. casual update)
+
+When in doubt, lean formal. You can always loosen up once you know the context.`,
                 examples: [
-                    { text: "We cannot proceed without approval.", note: "(formal)", correct: true },
-                    { text: "We can't proceed without approval.", note: "(informal)", correct: true },
-                    { text: "The initiative failed to meet objectives.", note: "(formal)", correct: true },
-                    { text: "The project didn't work out.", note: "(informal)", correct: true }
+                    { text: "We cannot proceed without board approval.", note: "(formal — 'cannot' not 'can't', precise and direct)", correct: true },
+                    { text: "We can't proceed without approval.", note: "(informal — appropriate for internal team message)", correct: true },
+                    { text: "The initiative failed to meet its stated objectives.", note: "(formal — specific and measured)", correct: true },
+                    { text: "The project didn't work out.", note: "(informal — acceptable in casual conversation)", correct: true },
+                    { text: "We are pleased to announce the successful completion of Phase 1.", note: "(formal announcement language)", correct: true },
+                    { text: "Revenue tanked in Q3, but we're pumped about Q4!", note: "(slang and exclamation — inappropriate for board report)", correct: false }
                 ],
                 questions: [
                     {
@@ -1662,19 +2048,38 @@ Know your audience and medium.`,
                 day: 28,
                 title: "Misplaced Modifiers",
                 topic: "Placing Descriptors Correctly",
-                content: `Place modifiers next to what they modify.
+                content: `A misplaced modifier is a word or phrase that is placed too far from the thing it describes, causing ambiguity or unintended meaning. The rule: place modifiers directly next to what they modify.
 
-Wrong: "We only tested three features." (implies we didn't do anything else)
-Right: "We tested only three features." (clarifies the limitation)
+THE MOST COMMON OFFENDERS: only, just, nearly, almost, even, merely, exactly, simply
 
-Common misplacements:
-- only, just, nearly, almost, even
-Place these directly before what they modify.`,
+These small words change meaning dramatically depending on placement:
+
+"Only she told him the truth." (No one else told him.)
+"She only told him the truth." (That's all she did — told him.)
+"She told only him the truth." (She didn't tell others.)
+"She told him only the truth." (Nothing else — no lies.)
+
+Each is grammatically correct, but they mean different things. In business writing, place 'only' directly before the specific element it modifies.
+
+"We only need three signatures." (ambiguous)
+"We need only three signatures." (clearer — three, not more)
+
+THE SQUINTING MODIFIER: A modifier that could describe either what comes before or after it.
+"Employees who work overtime often get burnout."
+Does "often" modify "work overtime" or "get burnout"?
+Fix: "Employees who often work overtime get burnout." OR "Employees who work overtime frequently get burnout."
+
+Misplaced phrase modifiers (a step up from Day 14's dangling modifiers):
+"She submitted a report about the merger to the board written in formal English."
+Who wrote it in formal English — she or the board? Move the phrase:
+"Written in formal English, the report she submitted addressed the merger."`,
                 examples: [
-                    { text: "We tested only three features.", note: "(clarifies quantity)", correct: true },
-                    { text: "We only tested three features.", note: "(ambiguous)", correct: false },
-                    { text: "Nearly 50 people attended.", note: "(modifies 50)", correct: true },
-                    { text: "We nearly lost 50 people.", note: "(modifies lost)", correct: true }
+                    { text: "We tested only three features in the first sprint.", note: "('only' next to 'three features' — limits the quantity)", correct: true },
+                    { text: "We only tested three features in the first sprint.", note: "(ambiguous — 'only' seems to modify 'tested'; means we did nothing else)", correct: false },
+                    { text: "Nearly 50 people attended the all-hands meeting.", note: "('nearly' modifies '50' — almost that number)", correct: true },
+                    { text: "We nearly lost 50 clients to the competitor.", note: "('nearly' modifies 'lost' — we almost lost them but didn't)", correct: true },
+                    { text: "She told him only the key findings.", note: "('only' modifies 'the key findings' — she didn't share other things)", correct: true },
+                    { text: "We almost reached all of our targets.", note: "(ambiguous — 'almost all' or 'almost reached'? Better: 'We reached almost all of our targets.')", correct: false }
                 ],
                 questions: [
                     {
@@ -1719,20 +2124,39 @@ Place these directly before what they modify.`,
                 day: 29,
                 title: "Precision in Word Choice",
                 topic: "Using Exact Terms",
-                content: `Choose precise words over vague ones:
+                content: `Precise word choice is a hallmark of strong professional writing. Vague words force the reader to fill in gaps; precise words deliver the exact meaning efficiently.
 
-Vague → Precise:
-- things → factors, elements, components
-- got → received, obtained, acquired
-- make → create, develop, build, generate
-- good → effective, beneficial, valuable
-- bad → detrimental, ineffective, problematic
+VAGUE → PRECISE (common business upgrades):
+- things → factors, elements, components, variables, criteria
+- got → received, obtained, acquired, secured, achieved
+- make → create, develop, build, generate, produce, draft, establish
+- good → effective, beneficial, valuable, productive, successful, viable
+- bad → detrimental, ineffective, problematic, counterproductive, harmful
+- big / large → substantial, significant, considerable, extensive, major
+- small / little → minor, minimal, marginal, limited, negligible
+- use → leverage, employ, implement, apply, utilize (use 'use' when 'utilize' adds no meaning)
+- show → demonstrate, reveal, indicate, illustrate, confirm, highlight
+- said → stated, noted, reported, indicated, emphasized, recommended
 
-Precision makes business writing professional and clear.`,
+WHY PRECISION MATTERS:
+1. It eliminates ambiguity — "factors" tells readers specifically what kind of "things" you mean
+2. It signals expertise — precise vocabulary shows command of the subject
+3. It is more efficient — specific words carry more meaning in fewer syllables
+
+CAVEAT — avoid word inflation:
+"Utilize" doesn't mean more than "use" — don't use it to sound important.
+"Leverage" as a verb is sometimes overused in business writing to the point of cliché.
+Precision means choosing the most accurate word, not the most sophisticated-sounding one.
+
+Also watch for weasel words — vague qualifiers that weaken claims:
+"somewhat," "relatively," "quite," "fairly," "rather" — cut these when you can make the claim directly.`,
                 examples: [
-                    { text: "We identified key factors affecting growth.", note: "(not 'things')", correct: true },
-                    { text: "The strategy proved effective.", note: "(not 'good')", correct: true },
-                    { text: "We received board approval.", note: "(not 'got')", correct: true }
+                    { text: "We identified three key factors affecting revenue growth.", note: "('factors' is precise — not vague 'things')", correct: true },
+                    { text: "The revised strategy proved highly effective.", note: "('effective' is precise — not vague 'good')", correct: true },
+                    { text: "We received board approval for the acquisition.", note: "('received' is precise — not informal 'got')", correct: true },
+                    { text: "The campaign generated significant engagement across all channels.", note: "('generated' and 'significant' are precise and specific)", correct: true },
+                    { text: "The merger revealed several critical compliance gaps.", note: "('revealed' and 'critical compliance gaps' are precise terms)", correct: true },
+                    { text: "Several things made the project quite bad.", note: "(vague — 'things', 'quite', and 'bad' all lack precision)", correct: false }
                 ],
                 questions: [
                     {
@@ -1777,19 +2201,39 @@ Precision makes business writing professional and clear.`,
                 day: 30,
                 title: "Final Integration: Business Memo",
                 topic: "Applying All Skills",
-                content: `This final lesson tests everything: active voice, concision, parallel structure, formal register, precise language, proper punctuation, and clear organization.
+                content: `This final lesson brings together everything from the past 29 days. A professional business memo is a controlled writing environment that demands all your grammar and style skills simultaneously.
 
-A strong business memo:
-- States purpose upfront
-- Uses active voice
-- Eliminates redundancy
-- Maintains formal tone
-- Uses precise vocabulary
-- Follows all grammar rules
+SKILLS CHECKLIST — apply all of these:
+✓ Day 1: Subject vs object pronouns (I/me, who/whom)
+✓ Day 2/18: That vs which; restrictive vs non-restrictive clauses
+✓ Day 3/16: No comma splices; commas with independent clauses
+✓ Day 4/5/19: Its/it's, their/there/they're, apostrophes
+✓ Day 6: Who vs whom
+✓ Day 7: Affect vs effect
+✓ Day 8: Less vs fewer
+✓ Day 10: Subjunctive mood for recommendations
+✓ Day 11: Active voice over passive
+✓ Day 12/26: No filler phrases; no redundancy
+✓ Day 13: Parallel structure in lists
+✓ Day 14/28: No dangling or misplaced modifiers
+✓ Day 15/16/17: Correct comma and semicolon use
+✓ Day 20: Avoid nominalization
+✓ Day 21/22: Colons and hyphens used correctly
+✓ Day 23/24: Tense consistency; subject-verb agreement
+✓ Day 25: Correct prepositions
+✓ Day 27: Formal register throughout
+✓ Day 29: Precise word choice
 
-Review previous days if needed.`,
+A STRONG MEMO STRUCTURE:
+1. PURPOSE line: State in one sentence what this memo does (recommends, reports, requests, announces)
+2. CONTEXT: One brief paragraph — why is this memo being written now?
+3. FINDINGS or ANALYSIS: Use numbered lists or clear paragraphs with parallel structure
+4. RECOMMENDATION: Use the subjunctive where appropriate ("We recommend that the board approve...")
+5. ACTION ITEMS: Specific next steps with owners and deadlines
+6. Signature/contact if needed`,
                 examples: [
-                    { text: "Purpose: Recommend Q4 strategy changes.\n\nAnalysis shows three issues: declining retention, rising costs, and market saturation. We propose: (1) enhance customer success, (2) optimize operations, (3) diversify offerings.\n\nImplementation begins November 1.", note: "(strong memo)", correct: true }
+                    { text: "Purpose: Recommend Q4 strategy adjustments to address three critical risks.\n\nAnalysis identified three issues: declining retention, rising operational costs, and increasing market saturation. We recommend that the board approve the following: (1) enhancing customer success programs, (2) optimizing operational processes, and (3) diversifying product offerings.\n\nImplementation begins November 1. Each workstream lead will submit a progress report by November 15.", note: "(strong memo — active voice, parallel structure, precise language, formal tone, subjunctive in recommendation)", correct: true },
+                    { text: "This memo is to let you know about some things that were identified as problems that we think should be fixed.", note: "(weak — passive voice, vague 'things', nominalized 'identified as problems', wordy)", correct: false }
                 ],
                 questions: [
                     {
